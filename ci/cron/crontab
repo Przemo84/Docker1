@@ -1,0 +1,4 @@
+*/5 * * * * cd /var/www/symfony/ && /usr/local/bin/php bin/console app:plagiary-search  >> /var/www/symfony/cronlog
+*/5 * * * * cd /var/www/symfony/ && /usr/local/bin/php bin/console app:plagiary-image-insert  >> /var/www/symfony/cronlog
+*/5 * * * * cd /var/www/symfony/ && /usr/local/bin/php bin/console app:matters-status-scanner >> /var/www/symfony/cronlog
+*/5 * * * * cd /var/www/symfony/ && /usr/local/bin/php bin/console app:matter-custom-fields-scanner >> /var/www/symfony/cronlog

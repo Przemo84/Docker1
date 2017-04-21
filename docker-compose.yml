@@ -1,0 +1,75 @@
+version: '2'
+
+services:
+    db:
+        image: mysql
+        container_name: "mysql-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE-$CI_BUILD_REF_NAME$COMPOSE_TESTING"
+        networks:
+            - nginx-proxy
+        volumes:
+            - ./ci/.data/db:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: "sf"
+            MYSQL_ROOT_PASSWORD: "root"
+    php:
+        build: ./ci/php7-fpm
+        container_name: "php-fpm-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE-$CI_BUILD_REF_NAME$COMPOSE_TESTING"
+        networks:
+            - nginx-proxy
+        links:
+            - db:mysqldb
+            - postfix
+            - elasticsearch
+        volumes:
+            - ./:/var/www/symfony
+            - /home/commposer/.composer/cache/:/root/.composer/cache/
+    cron:
+        build: ./ci/cron
+        container_name: "cron-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE-$CI_BUILD_REF_NAME$COMPOSE_TESTING"
+        networks:
+            - nginx-proxy
+        volumes_from:
+            - php
+        links:
+            - db:mysqldb
+            - postfix
+            - elasticsearch
+    nginx:
+        build: ./ci/nginx
+        container_name: "web-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE-$CI_BUILD_REF_NAME$COMPOSE_TESTING"
+        environment:
+            - VIRTUAL_HOST=$CI_BUILD_REF_NAME.$CI_PROJECT_NAME.etd24.pl
+            - SSH_AUTH_SOCK=/ssh-agent
+        networks:
+            - nginx-proxy
+        links:
+            - php
+            - postfix
+            - elasticsearch
+        volumes_from:
+            - php
+        volumes:
+            - ./ci/logs/nginx/:/var/log/nginx
+    postfix:
+        image: juanluisbaptiste/postfix:latest
+        container_name: "postfix-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE-$CI_BUILD_REF_NAME$COMPOSE_TESTING"
+        networks:
+            - nginx-proxy
+#        expose:
+#           - "25"
+        environment:
+            SMTP_SERVER: smtp.etendard.pl
+            SMTP_USERNAME: support@etendard.pl
+            SMTP_PASSWORD: d24e4bGbra9v8fpf
+            SERVER_HOSTNAME: smtp.etendard.pl
+    elasticsearch:
+        image: elasticsearch:1.7
+        container_name: "elasticsearch-$CI_PROJECT_NAME-$CI_PROJECT_NAMESPACE-$CI_BUILD_REF_NAME$COMPOSE_TESTING"
+        networks:
+            - nginx-proxy
+
+
+networks:
+  nginx-proxy:
+    external:
+      name: nginx-proxy

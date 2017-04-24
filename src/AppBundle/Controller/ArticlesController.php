@@ -16,24 +16,27 @@ class ArticlesController extends Controller
      * @Route("/article", name="articles_list")
      * @Method("GET")
      */
-    public function getArticleAction()
+    public function listAllArticlesAction()
     {
         $restResult = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
+        if (!$restResult) {
+            throw new \Exception("Brak rekordow w bazie");
+        }
 
         $serializer = $this->get("jms_serializer");
+        $response = new Response($serializer->serialize($restResult, 'json'));
+        $response->headers->set('Content-Type', 'application-json');
 
-        $result2 = $serializer->serialize($restResult, 'json');
-        $result = [];
-
+        $response2= [];
         /** @var Article $item */
         foreach ($restResult as $item) {
-            $result[] = [
+            $response2[] = [
                 'id' => $item->getId(),
                 'title' => $item->getTitle(),
                 'content' => $item->getContent()
             ];
         }
-        return new Response($result2);
+        return $response;
     }
 
     /**
@@ -43,6 +46,10 @@ class ArticlesController extends Controller
     public function deleteArticleAction($id)
     {
         $deletingRecord = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
+
+        if(!$deletingRecord) {
+            throw new \Exception(sprintf('Nie można usunąć tego rekordu. Rekord o id = "%s" nie istnieje',$id));
+        }
 
         $em = $this->getDoctrine()->getManager();
         $em->remove($deletingRecord);
@@ -55,17 +62,14 @@ class ArticlesController extends Controller
      * @Route("/article", name="new_article_create")
      * @Method("POST")
      */
-    public function postArticleAction(Request $request)
+    public function createArticleAction(Request $request)
     {
-
-        $jsonRequest = $request;
-        $jsonArray = json_decode($jsonRequest->getContent(), true);
-
+        $jsonRequest = $request->getContent();
+        $jsonArray = json_decode($jsonRequest, true);
 
         $newArticle = new Article();
         $newArticle->setTitle($jsonArray['title']);
         $newArticle->setContent($jsonArray['content']);
-
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($newArticle);
@@ -73,24 +77,70 @@ class ArticlesController extends Controller
 
         return new Response();
     }
-    /**
-     * @Route("/dupa", name="new_article_create")
-     * @Method("POST")
-     */
-    public function putAction(Request $request)
-    {
-        $body = $request->getContent();
-        $jsonArray = json_decode($request, true);
 
-        $newArticle = new Article();
-        $form = $this->createForm(new ArticleForm(), $newArticle );
-        $form->submit($jsonArray);
+//    /**
+//     * @Route("/one", name="new_article_creating")
+//     * @Method("POST")
+//     */
+//    public function formPostAction(Request $request)
+//    {
+//        $jsonArray = json_decode($request->getContent(), true);
+//
+//        $newArticle1 = new Article();
+//
+//        $form = $this->createForm(new ArticleForm(), $newArticle1);
+//        $form->submit($jsonArray);
+//
+//        $em = $this->getDoctrine()->getManager();
+//        $em->persist($newArticle1);
+//        $em->flush();
+//
+//        return new Response();
+//    }
+
+
+    /**
+     * @Route("/article/{id} ", name="article_update")
+     * @Method("PUT")
+     */
+    public function updateArticleAction(Request $request, $id)
+    {
+        $recordToUpdate = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
+
+        if(!$recordToUpdate) {
+            throw new \Exception(sprintf('Nie można uaktualnić tego rekordu. Rekord o id="%s" nie istnieje',$id));
+        }
+
+        $jsonArray = json_decode($request->getContent(),true);
+
+        $recordToUpdate->setTitle($jsonArray['title']);
+        $recordToUpdate->setContent($jsonArray['content']);
 
         $em = $this->getDoctrine()->getManager();
-        $em->persist($newArticle);
+        dump($em);
+        die;
+        $em->persist($recordToUpdate);
         $em->flush();
 
         return new Response();
+    }
+
+    /**
+     * @Route("/article/{id} ", name="list_one_article")
+     * @Method("GET")
+     */
+    public function listOneArticleAction($id)
+    {
+        $articleFromDatabase = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
+
+        if(!$articleFromDatabase) {
+            throw new \Exception(sprintf('Rekord o id="%s" nie istnieje',$id));
+        }
+
+        $serializer = $this->get('jms_serializer');
+        $jsonArticle = $serializer->serialize($articleFromDatabase, 'json');
+
+        return new Response($jsonArticle);
     }
 
 }

@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
 class ArticlesController extends Controller
 {
     /**
@@ -18,18 +19,19 @@ class ArticlesController extends Controller
      */
     public function listAllArticlesAction()
     {
-        $restResult = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
-        if (!$restResult) {
+        $listOfArticles = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
+        if (!$listOfArticles ) {
             throw new \Exception("Brak rekordow w bazie");
         }
 
         $serializer = $this->get("jms_serializer");
-        $response = new Response($serializer->serialize($restResult, 'json'));
+        $response = new Response ($serializer->serialize($listOfArticles , 'json'));
         $response->headers->set('Content-Type', 'application-json');
 
         $response2= [];
+
         /** @var Article $item */
-        foreach ($restResult as $item) {
+        foreach ($listOfArticles  as $item) {
             $response2[] = [
                 'id' => $item->getId(),
                 'title' => $item->getTitle(),
@@ -78,27 +80,6 @@ class ArticlesController extends Controller
         return new Response();
     }
 
-//    /**
-//     * @Route("/one", name="new_article_creating")
-//     * @Method("POST")
-//     */
-//    public function formPostAction(Request $request)
-//    {
-//        $jsonArray = json_decode($request->getContent(), true);
-//
-//        $newArticle1 = new Article();
-//
-//        $form = $this->createForm(new ArticleForm(), $newArticle1);
-//        $form->submit($jsonArray);
-//
-//        $em = $this->getDoctrine()->getManager();
-//        $em->persist($newArticle1);
-//        $em->flush();
-//
-//        return new Response();
-//    }
-
-
     /**
      * @Route("/article/{id} ", name="article_update")
      * @Method("PUT")
@@ -117,8 +98,6 @@ class ArticlesController extends Controller
         $recordToUpdate->setContent($jsonArray['content']);
 
         $em = $this->getDoctrine()->getManager();
-        dump($em);
-        die;
         $em->persist($recordToUpdate);
         $em->flush();
 
@@ -143,4 +122,46 @@ class ArticlesController extends Controller
         return new Response($jsonArticle);
     }
 
+    /**
+     * @Route("/one", name="new_article_creating")
+     * @Method("POST")
+     */
+    public function formPostAction(Request $request)
+    {
+        $jsonArray = json_decode($request->getContent(), true);
+
+        $ArticleObj = new Article();
+
+        $form = $this -> createForm(ArticleForm::class, $ArticleObj);
+        $form -> submit($jsonArray);
+
+        $em = $this->getDoctrine()->getManager();
+        $em -> persist($ArticleObj);
+        $em -> flush();
+
+        return new Response();
+    }
+
+    /**
+     * @Route("/article", name="delete_all_articles")
+     * @Method("DELETE")
+     */
+    public function deleteAllAction()
+    {
+        $listToDelete = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
+
+        if(!$listToDelete) {
+            throw new \Exception('Brak rekordów w bazie');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        /** @var Article $item */
+        foreach ($listToDelete as $item) {
+            $em->remove($item);
+            $em->flush();
+        }
+
+        return new Response();
+    }
 }

@@ -7,6 +7,7 @@ use AppBundle\Form\ArticleForm;
 use FOS\RestBundle\Controller\Annotations\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -14,43 +15,51 @@ use Symfony\Component\HttpFoundation\Response;
 class ArticlesController extends Controller
 {
     /**
+     * TODO pagination
+     *
      * @Route("/article", name="articles_list")
      * @Method("GET")
      */
-    public function listAllArticlesAction()
+    public function listAllAction()
     {
+
         $listOfArticles = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
-        if (!$listOfArticles ) {
+
+        if (!$listOfArticles) {
             throw new \Exception("Brak rekordow w bazie");
         }
 
-        $serializer = $this->get("jms_serializer");
-        $response = new Response ($serializer->serialize($listOfArticles , 'json'));
-        $response->headers->set('Content-Type', 'application-json');
+        //nie rzucamy wyjątku na najwyższym poziomie abstrakcji, 404 status code. Użytkownik nie ma prawa zobaczyć listy wyjątków z Symfony.
+        // Nie rzucamy ogólnym wyjątkiem Exception!
 
-        $response2= [];
+        $serializer = $this->get("jms_serializer");
+
+
+        $response2 = [];
 
         /** @var Article $item */
-        foreach ($listOfArticles  as $item) {
+        foreach ($listOfArticles as $item) {
             $response2[] = [
                 'id' => $item->getId(),
                 'title' => $item->getTitle(),
                 'content' => $item->getContent()
             ];
         }
-        return $response;
+
+        return new JsonResponse ($serializer->serialize($listOfArticles, 'json'));
     }
 
     /**
+     * TODO delete all if id is null
      * @Route("/article/{id}", name="article_delete")
      * @Method("DELETE")
      */
-    public function deleteArticleAction($id)
+    public function deleteAction($id = null)
     {
         $deletingRecord = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
 
-        if(!$deletingRecord) {
-            throw new \Exception(sprintf('Nie można usunąć tego rekordu. Rekord o id = "%s" nie istnieje',$id));
+        if (!$deletingRecord) {
+            throw new \Exception(sprintf('Nie można usunąć tego rekordu. Rekord o id = "%s" nie istnieje', $id));
         }
 
         $em = $this->getDoctrine()->getManager();
@@ -61,10 +70,12 @@ class ArticlesController extends Controller
     }
 
     /**
+     * TODO doczytać create w RESTful
+     * TODO 201 created status code i header location(opcjonalnie)
      * @Route("/article", name="new_article_create")
      * @Method("POST")
      */
-    public function createArticleAction(Request $request)
+    public function createAction(Request $request)
     {
         $jsonRequest = $request->getContent();
         $jsonArray = json_decode($jsonRequest, true);
@@ -81,18 +92,19 @@ class ArticlesController extends Controller
     }
 
     /**
+     * TODO 204 no content status code
      * @Route("/article/{id} ", name="article_update")
      * @Method("PUT")
      */
-    public function updateArticleAction(Request $request, $id)
+    public function updateAction(Request $request, $id)
     {
         $recordToUpdate = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
 
-        if(!$recordToUpdate) {
-            throw new \Exception(sprintf('Nie można uaktualnić tego rekordu. Rekord o id="%s" nie istnieje',$id));
+        if (!$recordToUpdate) {
+            throw new \Exception(sprintf('Nie można uaktualnić tego rekordu. Rekord o id="%s" nie istnieje', $id));
         }
 
-        $jsonArray = json_decode($request->getContent(),true);
+        $jsonArray = json_decode($request->getContent(), true);
 
         $recordToUpdate->setTitle($jsonArray['title']);
         $recordToUpdate->setContent($jsonArray['content']);
@@ -108,12 +120,12 @@ class ArticlesController extends Controller
      * @Route("/article/{id} ", name="list_one_article")
      * @Method("GET")
      */
-    public function listOneArticleAction($id)
+    public function showOneAction($id)
     {
         $articleFromDatabase = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
 
-        if(!$articleFromDatabase) {
-            throw new \Exception(sprintf('Rekord o id="%s" nie istnieje',$id));
+        if (!$articleFromDatabase) {
+            throw new \Exception(sprintf('Rekord o id="%s" nie istnieje', $id));
         }
 
         $serializer = $this->get('jms_serializer');
@@ -126,20 +138,22 @@ class ArticlesController extends Controller
      * @Route("/one", name="new_article_creating")
      * @Method("POST")
      */
-    public function formPostAction(Request $request)
+    public function formCreateAction(Request $request)
     {
         $jsonArray = json_decode($request->getContent(), true);
 
         $ArticleObj = new Article();
 
-        $form = $this -> createForm(ArticleForm::class, $ArticleObj);
-        $form -> submit($jsonArray);
+        $form = $this->createForm(ArticleForm::class, $ArticleObj);
+        $form->submit($jsonArray);
 
         $em = $this->getDoctrine()->getManager();
-        $em -> persist($ArticleObj);
-        $em -> flush();
+        $em->persist($ArticleObj);
+        $em->flush();
 
-        return new Response();
+        $response = new Response();
+
+        return $response;
     }
 
     /**
@@ -150,7 +164,7 @@ class ArticlesController extends Controller
     {
         $listToDelete = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
 
-        if(!$listToDelete) {
+        if (!$listToDelete) {
             throw new \Exception('Brak rekordów w bazie');
         }
 
@@ -163,5 +177,26 @@ class ArticlesController extends Controller
         }
 
         return new Response();
+    }
+
+
+    /**
+     * TODO pagination
+     *
+     * @Route("/two", name="articles_list")
+     * @Method("GET")
+     */
+    public function listPaginateAction(Request $request)
+    {
+
+        $paginator = $this->get('knp_paginator');
+        $page = $paginator->paginate(
+            $query,
+            $request->query->get('page',1),
+            10
+            );
+
+        return new Response ();
+
     }
 }

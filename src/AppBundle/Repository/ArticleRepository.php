@@ -1,6 +1,9 @@
 <?php
 
 namespace AppBundle\Repository;
+use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
+use Doctrine\ORM\Mapping;
+use JMS\SerializerBundle\JMSSerializerBundle;
 
 /**
  * ArticleRepository
@@ -10,4 +13,28 @@ namespace AppBundle\Repository;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
+    private $JMS;
+    private $doctrine;
+
+//        $this->JMS = $JMSSerializerBundle;
+
+    public function __construct( $doctrine)
+    {
+
+        $this->doctrine = $doctrine;
+    }
+
+    public function showArticles()
+    {
+        dump($this->doctrine);
+        die;
+        $zm1 = $this->doctrine->getRepository('AppBundle:Article')->findAll();
+
+
+
+        return $zm1;
+   }
+
+
+
 }

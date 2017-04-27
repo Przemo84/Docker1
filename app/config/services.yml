@@ -7,6 +7,14 @@ services:
     #service_name:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
-    api_rest:
-      class: AppBundle\Repository\ArticleRepository
-      arguments: [ '@doctrine']
+    app.repo.articles:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\Article
+
+    app.notifier.mail:
+      class: AppBundle\Service\Notifier
+      arguments:
+            - "@mailer"
+            - "@logger"

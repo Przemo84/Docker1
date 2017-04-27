@@ -1,9 +1,11 @@
 <?php
 
 namespace AppBundle\Repository;
+
+use AppBundle\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
-use Doctrine\ORM\Mapping;
-use JMS\SerializerBundle\JMSSerializerBundle;
+use Doctrine\ORM\EntityNotFoundException;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * ArticleRepository
@@ -13,28 +15,86 @@ use JMS\SerializerBundle\JMSSerializerBundle;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
-    private $JMS;
-    private $doctrine;
 
-//        $this->JMS = $JMSSerializerBundle;
-
-    public function __construct( $doctrine)
+    public function getQuery()
     {
+        $articlesQuery = $this->createQueryBuilder('a');
 
-        $this->doctrine = $doctrine;
+        return $articlesQuery;
     }
 
-    public function showArticles()
+    /**
+     * @param $id
+     */
+    public function getOne($id)
     {
-        dump($this->doctrine);
-        die;
-        $zm1 = $this->doctrine->getRepository('AppBundle:Article')->findAll();
+        $recordToShow = $this->find($id);
+
+        return $recordToShow;
+    }
+
+    /**
+     * @param $id
+     */
+    public function delete($id = null)
+    {
+        if ($id == null) {
+            $sql = 'DELETE FROM AppBundle\Entity\Article';
+            $this->createNamedQuery($sql);
+        } else {
+            $deletingRecord = $this->find($id);
+            $em = $this->getEntityManager();
+            $em->remove($deletingRecord);
+            $em->flush();
+        }
+
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function createNew(Request $request)
+    {
+//        $requestAssocArray = json_decode($request->getContent(), true);
+//
+//        $newArticle = new Article();
+//        $newArticle->setTitle($requestAssocArray['title']);
+//        $newArticle->setContent($requestAssocArray['content']);
+
+//        $em = $this->getEntityManager();
+//        $em->persist($newArticle);
+//        $em->flush();
 
 
 
-        return $zm1;
-   }
 
 
+
+
+
+
+
+    }
+
+    /**
+     * TODO użyc także form.
+     */
+    public function update($id, Request $request)
+    {
+        $updatingArticle = $this->find($id);
+
+        $dataToUpdate = json_decode($request->getContent(), true);
+
+        if (!$updatingArticle) {
+            /**
+             * TODO Stworzyć odpowiedni wyjątek. Nie mylić wyjątków w kodzie se statusoami kodów HTTP!!!
+             */
+        }
+        $updatingArticle->setTitle($dataToUpdate['title']);
+        $updatingArticle->setContent($dataToUpdate['content']);
+
+        $em = $this->getEntityManager();
+        $em->flush();
+    }
 
 }

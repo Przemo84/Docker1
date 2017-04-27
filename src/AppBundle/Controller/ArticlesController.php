@@ -17,13 +17,14 @@ class ArticlesController extends Controller
     /**
      * TODO pagination
      *
-     * @Route("/article", name="articles_list")
+     * @Route("/articles", name="articles_list")
      * @Method("GET")
      */
     public function listAllAction()
     {
 
         $listOfArticles = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
+        $zm1 = $this->get('');
 
         if (!$listOfArticles) {
             throw new \Exception("Brak rekordow w bazie");
@@ -51,7 +52,7 @@ class ArticlesController extends Controller
 
     /**
      * TODO delete all if id is null
-     * @Route("/article/{id}", name="article_delete")
+     * @Route("/articles/{id}", name="article_delete")
      * @Method("DELETE")
      */
     public function deleteAction($id = null)
@@ -72,7 +73,7 @@ class ArticlesController extends Controller
     /**
      * TODO doczytać create w RESTful
      * TODO 201 created status code i header location(opcjonalnie)
-     * @Route("/article", name="new_article_create")
+     * @Route("/articles", name="new_article_create")
      * @Method("POST")
      */
     public function createAction(Request $request)
@@ -93,7 +94,7 @@ class ArticlesController extends Controller
 
     /**
      * TODO 204 no content status code
-     * @Route("/article/{id} ", name="article_update")
+     * @Route("/articles/{id} ", name="article_update")
      * @Method("PUT")
      */
     public function updateAction(Request $request, $id)
@@ -117,7 +118,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @Route("/article/{id} ", name="list_one_article")
+     * @Route("/articles/{id} ", name="list_one_article")
      * @Method("GET")
      */
     public function showOneAction($id)
@@ -151,13 +152,13 @@ class ArticlesController extends Controller
         $em->persist($ArticleObj);
         $em->flush();
 
-        $response = new Response();
+        return new Response();
 
-        return $response;
+
     }
 
     /**
-     * @Route("/article", name="delete_all_articles")
+     * @Route("/articles", name="delete_all_articles")
      * @Method("DELETE")
      */
     public function deleteAllAction()

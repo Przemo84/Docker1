@@ -51,50 +51,21 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /**
-     * @param Request $request
+     * @param Article $article
      */
-    public function createNew(Request $request)
+    public function create(Article $article)
     {
-//        $requestAssocArray = json_decode($request->getContent(), true);
-//
-//        $newArticle = new Article();
-//        $newArticle->setTitle($requestAssocArray['title']);
-//        $newArticle->setContent($requestAssocArray['content']);
-
-//        $em = $this->getEntityManager();
-//        $em->persist($newArticle);
-//        $em->flush();
-
-
-
-
-
-
-
-
-
-
+        $this->_em->persist($article);
+        $this->_em->flush();
     }
 
+
     /**
-     * TODO użyc także form.
+     * @param Article $article
      */
-    public function update($id, Request $request)
+    public function update(Article $article)
     {
-        $updatingArticle = $this->find($id);
-
-        $dataToUpdate = json_decode($request->getContent(), true);
-
-        if (!$updatingArticle) {
-            /**
-             * TODO Stworzyć odpowiedni wyjątek. Nie mylić wyjątków w kodzie se statusoami kodów HTTP!!!
-             */
-        }
-        $updatingArticle->setTitle($dataToUpdate['title']);
-        $updatingArticle->setContent($dataToUpdate['content']);
-
-        $em = $this->getEntityManager();
-        $em->flush();
+        $this->create($article);
     }
 
 }

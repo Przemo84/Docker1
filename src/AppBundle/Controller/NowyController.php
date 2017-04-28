@@ -31,7 +31,8 @@ class NowyController extends Controller
         $listGenerator = $articleRepository->getQuery();
 
         $resultPage = $paginator->paginate(
-            $listGenerator, 1, 10
+            $listGenerator, 1, 10,
+            array('')
         );
 
         return new Response($serializer->serialize($resultPage, 'json'), 200, [
@@ -65,7 +66,7 @@ class NowyController extends Controller
 
         $articleRepository->delete($id);
 
-        return new Response(null, 410);
+        return new Response(null);
 
     }
 
@@ -76,20 +77,17 @@ class NowyController extends Controller
      */
     public function createAction(Request $request)
     {
+        $body = json_decode($request->getContent(), true);
+
+        /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
-        $requestedData = json_decode($request->getContent(),'true');
 
         $article = new Article();
 
-        $form = $this->createForm(ArticleForm::class, $article );
-        $form->submit($requestedData);
+        $form = $this->createForm(ArticleForm::class, $article);
+        $form->submit($body);
 
-        /**
-         * TODO rozkminić createArticle przy pomocy formularza!! Ale przy zachowaniu dobrych reguł kodowania SOLID!!
-         */
-
-
-
+        $articleRepository->create($article);
 
         return new Response(null, 201);
     }
@@ -101,8 +99,20 @@ class NowyController extends Controller
      */
     public function updateAction($id, Request $request)
     {
+        $body = json_decode($request->getContent(), true);
         $articleRepository = $this->get('app.repo.articles');
-        $articleRepository->update($id, $request);
+
+        $article = $articleRepository->find($id);
+
+        if(null === $article)
+        {
+            return new Response(null, 404);
+        }
+
+        $form = $this->createForm(ArticleForm::class, $article);
+        $form->submit($body);
+
+        $articleRepository->update($article);
 
         return new Response(null, 201);
     }

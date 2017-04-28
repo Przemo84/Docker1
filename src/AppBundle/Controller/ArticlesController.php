@@ -73,7 +73,7 @@ class ArticlesController extends Controller
     /**
      * TODO doczytać create w RESTful
      * TODO 201 created status code i header location(opcjonalnie)
-     * @Route("/articles", name="new_article_create")
+     * @Route("/articles"), name="new_article_create")
      * @Method("POST")
      */
     public function createAction(Request $request)
@@ -90,6 +90,24 @@ class ArticlesController extends Controller
         $em->flush();
 
         return new Response();
+    }
+
+    /**
+     * @Route("/articles/{id} ", name="list_one_article")
+     * @Method("GET")
+     */
+    public function showOneAction($id)
+    {
+        $articleFromDatabase = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
+
+        if (!$articleFromDatabase) {
+            throw new \Exception(sprintf('Rekord o id="%s" nie istnieje', $id));
+        }
+
+        $serializer = $this->get('jms_serializer');
+        $jsonArticle = $serializer->serialize($articleFromDatabase, 'json');
+
+        return new Response($jsonArticle);
     }
 
     /**
@@ -117,23 +135,6 @@ class ArticlesController extends Controller
         return new Response();
     }
 
-    /**
-     * @Route("/articles/{id} ", name="list_one_article")
-     * @Method("GET")
-     */
-    public function showOneAction($id)
-    {
-        $articleFromDatabase = $this->getDoctrine()->getRepository('AppBundle:Article')->find($id);
-
-        if (!$articleFromDatabase) {
-            throw new \Exception(sprintf('Rekord o id="%s" nie istnieje', $id));
-        }
-
-        $serializer = $this->get('jms_serializer');
-        $jsonArticle = $serializer->serialize($articleFromDatabase, 'json');
-
-        return new Response($jsonArticle);
-    }
 
     /**
      * @Route("/one", name="new_article_creating")
@@ -143,13 +144,14 @@ class ArticlesController extends Controller
     {
         $jsonArray = json_decode($request->getContent(), true);
 
-        $ArticleObj = new Article();
+        $articleObj = new Article();
 
-        $form = $this->createForm(ArticleForm::class, $ArticleObj);
+        $form = $this->createForm(ArticleForm::class, $articleObj);
         $form->submit($jsonArray);
 
+
         $em = $this->getDoctrine()->getManager();
-        $em->persist($ArticleObj);
+        $em->persist($articleObj);
         $em->flush();
 
         return new Response();

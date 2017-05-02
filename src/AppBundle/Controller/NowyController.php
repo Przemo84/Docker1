@@ -68,6 +68,7 @@ class NowyController extends Controller
 
         return new Response(null);
 
+
     }
 
     /**
@@ -115,6 +116,20 @@ class NowyController extends Controller
         $articleRepository->update($article);
 
         return new Response(null, 201);
+    }
+
+    /**
+     * @Route("/ar", name="listing_articles_via_query")
+     * @Method("GET")
+     */
+    public function listTestAction()
+    {
+        $articleRepository = $this->get('app.repo.articles');
+        $serializer = $this->get('jms_serializer');
+
+        $resultedQuery = $articleRepository->myQuery();
+
+        return new Response($serializer->serialize($resultedQuery,'json'));
     }
 
 }

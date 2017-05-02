@@ -3,9 +3,7 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Article;
-use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
-use Doctrine\ORM\EntityNotFoundException;
-use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * ArticleRepository
@@ -66,6 +64,23 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     public function update(Article $article)
     {
         $this->create($article);
+    }
+
+
+    public function myQuery()
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $zm1 = $qb ->select('a.title')
+            ->where('a.id> :id')
+            ->setParameter('id','350')
+            ->orderBy('a.title','ASC')
+            ->getQuery();
+
+        $queriedArticle = $zm1->getResult();
+
+        return $queriedArticle;
+
     }
 
 }

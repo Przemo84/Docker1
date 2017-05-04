@@ -6,7 +6,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleForm;
 use AppBundle\Repository\ArticleRepository;
-use FOS\RestBundle\Controller\Annotations\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,11 +16,10 @@ class NowyController extends Controller
 {
 
     /**
-     * @Route("/art/{id}", name="list_articles")
+     * @Route("/art/", name="list_articles")
      * @Method("GET")
-     * @param null $id
      */
-    public function listAction($id = null)
+    public function listAction(Request $request)
     {
 
         /** @var ArticleRepository $articleRepository */
@@ -28,14 +27,33 @@ class NowyController extends Controller
         $serializer = $this->get('jms_serializer');
         $paginator = $this->get('knp_paginator');
 
-
-        $listOfArticles = $articleRepository->getQuery($id);
+        $listOfArticles = $articleRepository->listAll();
 
         $results = $paginator->paginate(
-            $listOfArticles, 1, 10);
+            $listOfArticles,
+            $request->query->get('page'),
+            $request->query->get('limit') ?? 10 );
 
-        return new Response($serializer->serialize($results, 'json'), 200, ['content-type()' => 'application/json']);
+        return new Response($serializer->serialize($results, 'json'), 200, ['content-type' => 'application/json']);
     }
+
+
+    /**
+     * @Route ("/art/{id}", name="show_article")
+     * @Method("GET")
+     * @param $id
+     */
+    public function showAction($id)
+    {
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+        $serializer = $this->get('serializer');
+
+        $oneArticle = $articleRepository->showOne($id);
+
+        return new Response($serializer->serialize($oneArticle,'json'),200,['content-type'=>'application/json']);
+    }
+
 
     /**
      * @Route("/art/{id}", name="delete_article")
@@ -62,7 +80,6 @@ class NowyController extends Controller
     {
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
-        dump($request->getUri()); die;
 
         $requestedBody = json_decode($request->getContent(), true);
 
@@ -99,6 +116,7 @@ class NowyController extends Controller
         return new Response(null, 201, ['content-type'=>'application/json']);
     }
 
+
     /**
      * @Route("/ar", name="listing_articles_via_query")
      * @Method("GET")
@@ -112,5 +130,7 @@ class NowyController extends Controller
 
         return new Response($serializer->serialize($resultedQuery,'json'));
     }
+
+
 
 }

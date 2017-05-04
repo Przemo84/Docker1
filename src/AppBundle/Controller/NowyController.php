@@ -16,106 +16,87 @@ class NowyController extends Controller
 {
 
     /**
-     * @Route("/article", name="listing_articles_page")
+     * @Route("/art/{id}", name="list_articles")
      * @Method("GET")
+     * @param null $id
      */
-    public function listAction()
+    public function listAction($id = null)
     {
-
-        $serializer = $this->get('jms_serializer');
-        $paginator = $this->get('knp_paginator');
 
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
+        $serializer = $this->get('jms_serializer');
+        $paginator = $this->get('knp_paginator');
 
-        $listGenerator = $articleRepository->getQuery();
 
-        $resultPage = $paginator->paginate(
-            $listGenerator, 1, 10,
-            array('')
-        );
+        $listOfArticles = $articleRepository->getQuery($id);
 
-        return new Response($serializer->serialize($resultPage, 'json'), 200, [
-            'content-type' => 'application/json'
-        ]);
+        $results = $paginator->paginate(
+            $listOfArticles, 1, 10);
+
+        return new Response($serializer->serialize($results, 'json'), 200, ['content-type()' => 'application/json']);
     }
 
     /**
-     * @Route("/article/{id}", name="show_one_article")
-     * @Method("GET")
+     * @Route("/art/{id}", name="delete_article")
+     * @Method("DELETE")
      * @param $id
      */
-    public function showAction($id)
+    public function deleteAction($id = null)
     {
-        $serializer = $this->get('jms_serializer');
-        $articleRepository = $this->get('app.repo.articles');
-
-        $resultRecord = $articleRepository->getOne($id);
-
-        return new Response($serializer->serialize($resultRecord, 'json'), 200);
-    }
-
-
-    /**
-     * @Route("/article/{id}", name="delete_article")
-     * @Method("DELETE")
-     */
-    public function purgeAction($id = null)
-    {
+        /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
         $articleRepository->delete($id);
 
-        return new Response(null);
-
-
+        return new Response(null, 204);
     }
 
     /**
-     * @Route("/article", name="create_new_article")
+     * @Route("/art/{id}" , name="update_article")
+     * @Method("PUT")
+     * @param Request $request
+     * @param $id
+     */
+    public function updateAction(Request $request, $id)
+    {
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+        dump($request->getUri()); die;
+
+        $requestedBody = json_decode($request->getContent(), true);
+
+        $articleToUpdate = $articleRepository->find($id);
+
+        $form = $this->createForm(ArticleForm::class,$articleToUpdate);
+        $form->submit($requestedBody);
+
+        $articleRepository->update($articleToUpdate);
+
+        return new Response(null, 200);
+    }
+
+    /**
+     * @Route("/art", name="create_article")
      * @Method("POST")
      * @param Request $request
      */
     public function createAction(Request $request)
     {
-        $body = json_decode($request->getContent(), true);
 
-        /** @var ArticleRepository $articleRepository */
+        /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
-        $article = new Article();
+        $body = json_decode($request->getContent(),true);
 
-        $form = $this->createForm(ArticleForm::class, $article);
+        $newArticle = new Article();
+
+        $form = $this->createForm(ArticleForm::class,$newArticle);
         $form->submit($body);
 
-        $articleRepository->create($article);
+        $articleRepository->update($newArticle);
 
-        return new Response(null, 201);
-    }
-
-    /**
-     * @Route("/article/{id}", name="update_article")
-     * @Method("PUT")
-     * @param Request $request
-     */
-    public function updateAction($id, Request $request)
-    {
-        $body = json_decode($request->getContent(), true);
-        $articleRepository = $this->get('app.repo.articles');
-
-        $article = $articleRepository->find($id);
-
-        if(null === $article)
-        {
-            return new Response(null, 404);
-        }
-
-        $form = $this->createForm(ArticleForm::class, $article);
-        $form->submit($body);
-
-        $articleRepository->update($article);
-
-        return new Response(null, 201);
+        return new Response(null, 201, ['content-type'=>'application/json']);
     }
 
     /**

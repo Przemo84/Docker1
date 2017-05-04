@@ -14,22 +14,28 @@ use AppBundle\Entity\Article;
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function getQuery()
-    {
-        $articlesQuery = $this->createQueryBuilder('a');
-
-        return $articlesQuery;
-    }
-
     /**
      * @param $id
+     *
      */
-    public function getOne($id)
+    public function getQuery($id)
     {
-        $recordToShow = $this->find($id);
 
-        return $recordToShow;
+        if (!($id == null)) {
+            $oneArticle = $this->createQueryBuilder('a')
+                ->select('a')
+                ->where('a.id = :id')
+                ->setParameter('id', $id);
+
+            return $oneArticle;
+        }
+        {
+            $allArticles = $this->createQueryBuilder('a');
+
+            return $allArticles;
+        }
     }
+
 
     /**
      * @param $id
@@ -37,9 +43,12 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     public function delete($id = null)
     {
         if ($id == null) {
-            $sql = 'DELETE FROM AppBundle\Entity\Article';
-            $this->createNamedQuery($sql);
-        } else {
+            $this->createQueryBuilder('a')
+                ->delete('AppBundle\Entity\Article')
+                ->getQuery()
+                ->execute();
+        }
+        {
             $deletingRecord = $this->find($id);
             $em = $this->getEntityManager();
             $em->remove($deletingRecord);
@@ -51,29 +60,74 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     /**
      * @param Article $article
      */
-    public function create(Article $article)
-    {
-        $this->_em->persist($article);
-        $this->_em->flush();
-    }
-
-
-    /**
-     * @param Article $article
-     */
     public function update(Article $article)
     {
-        $this->create($article);
+        $em = $this->getEntityManager();
+        $em->persist($article);
+        $em->flush();
+
     }
 
-
+//    public function getQuery()
+//    {
+//        $articlesQuery = $this->createQueryBuilder('a');
+//
+//        return $articlesQuery;
+//    }
+//
+//    /**
+//     * @param $id
+//     */
+//    public function getOne($id)
+//    {
+//        $recordToShow = $this->find($id);
+//
+//        return $recordToShow;
+//    }
+//
+//    /**
+//     * @param $id
+//     */
+//    public function delete($id = null)
+//    {
+//        if ($id == null) {
+//            $sql = 'DELETE FROM AppBundle\Entity\Article';
+//            $this->createNamedQuery($sql);
+//        } else {
+//            $deletingRecord = $this->find($id);
+//            $em = $this->getEntityManager();
+//            $em->remove($deletingRecord);
+//            $em->flush();
+//        }
+//
+//    }
+//
+//    /**
+//     * @param Article $article
+//     */
+//    public function create(Article $article)
+//    {
+//        $this->_em->persist($article);
+//        $this->_em->flush();
+//    }
+//
+//
+//    /**
+//     * @param Article $article
+//     */
+//    public function update(Article $article)
+//    {
+//        $this->create($article);
+//    }
+//
+//
     public function myQuery()
     {
         $qb = $this->createQueryBuilder('a');
 
         $zm1 = $qb ->select('a.title')
             ->where('a.id> :id')
-            ->setParameter('id','350')
+            ->setParameter('id','12ma')
             ->orderBy('a.title','ASC')
             ->getQuery();
 
@@ -82,5 +136,7 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         return $queriedArticle;
 
     }
+
+
 
 }

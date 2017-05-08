@@ -38,4 +38,37 @@ class WebController extends Controller
         ]);
     }
 
+    /**
+     * @Route ("/a/{id}", name="show_article")
+     * @Method("GET")
+     * @param $id
+     */
+    public function showAction($id)
+    {
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+        $serializer = $this->get('serializer');
+
+        $oneArticle = $articleRepository->showOne($id);
+
+        return $this->render('articles/show.html.twig', [
+            'oneArticle' => $oneArticle
+        ]);
+    }
+
+    /**
+     * @Route("/a/{id}", name="delete_article")
+     * @Method("DELETE")
+     * @param $id
+     */
+    public function deleteAction($id = null)
+    {
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+
+        $articleRepository->delete($id);
+
+        return $this->render('articles/list.html.twig');
+    }
+
 }

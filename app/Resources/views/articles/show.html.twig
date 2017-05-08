@@ -1,0 +1,15 @@
+{% extends 'articles/base.html.twig' %}
+
+{% block body %}
+    <div class="header">
+        <h3>Content of the article's id: {{ oneArticle.id }} , of title: {{ oneArticle.title }}:</h3>
+    </div>
+    <div class="content">
+            {{ oneArticle.content }}
+        <br/>
+        <br/>
+        <a href="{{}}">Back to list</a>
+    </div>
+
+
+{% endblock %}

@@ -6,20 +6,18 @@
     </div>
     <div class="content">
         <div class="count">
-            <h4> <u> Total amount of artcles: {{ results.getTotalItemCount }} </u></h4>
+            <h4> <u> Total amount of aritcles: {{ results.getTotalItemCount }} </u></h4>
         </div>
         <table>
             <tr>
                 <th>ID</th>
                 <th>TITLE</th>
-                <th>CONTENT</th>
             </tr>
             {% for result in results %}
                 <tr>
                     <td>{{ result.id }}</td>
                     <td>{{ result.title }}</td>
-                    <td>{{ result.content }}</td>
-                    <td><a href="z">Read</a></td>
+                    <td><a href="{{ result.id }}">Read</a></td>
                     <td><a href="x">Edit</a></td>
                     <td><a href="y">Delete</a></td>
                 </tr>

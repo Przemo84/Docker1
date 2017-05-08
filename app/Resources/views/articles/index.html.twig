@@ -1,0 +1,41 @@
+{% extends 'articles/base.html.twig' %}
+
+{% block body  %}
+    <div class="header">
+        <p>Lista artyułów:</p>
+    </div>
+    <div class="content">
+        {{ results }}
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+            </tr>
+            {%  for result in results %}
+                <tr>
+                    <td>{{ result.id}}</td>
+                    <td>{{ result.title }}</td>
+                    <td>{{ result.content }}</td>
+                    <td><a href="x">Czytaj  </a></td>
+                    <td><a href="y">Usuń  </a></td>
+                    <td><a href="z">Edytuj  </a></td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div class="nav">
+        <form>
+            <p>Nawigator-podłączyć własciwy formularz</p>
+            <input type="text" name="titleArticle" placeholder="Tytuł artykulu">
+            <input type="text" name="contentrticle" placeholder="Treść artykulu">
+            <input type="submit" value="Utwórz Artykuł">
+        </form>
+
+    </div>
+    <div style="clear: both">
+
+    </div>
+
+{% endblock  %}

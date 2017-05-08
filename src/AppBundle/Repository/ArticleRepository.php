@@ -67,21 +67,4 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
-    public function myQuery()
-    {
-        $qb = $this->createQueryBuilder('a');
-
-        $zm1 = $qb->select('a.title')
-            ->where('a.id> :id')
-            ->setParameter('id', '12ma')
-            ->orderBy('a.title', 'ASC')
-            ->getQuery();
-
-        $queriedArticle = $zm1->getResult();
-
-        return $queriedArticle;
-
-    }
-
-
 }

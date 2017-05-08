@@ -1,0 +1,34 @@
+{% extends 'articles/base.html.twig' %}
+
+{% block body %}
+    <div class="header">
+        <h3>List of articles</h3>
+    </div>
+    <div class="content">
+        <div class="count">
+            <h4> <u> Total amount of artcles: {{ results.getTotalItemCount }} </u></h4>
+        </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>CONTENT</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.id }}</td>
+                    <td>{{ result.title }}</td>
+                    <td>{{ result.content }}</td>
+                    <td><a href="z">Read</a></td>
+                    <td><a href="x">Edit</a></td>
+                    <td><a href="y">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div class="navigation" style="text-align:center">
+            {{ knp_pagination_render(results) }}
+        </div>
+    </div>
+
+
+{% endblock %}

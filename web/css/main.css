@@ -1,0 +1,30 @@
+.container {
+    width: 1300px;
+
+}
+
+.header {
+    width: 1300px;
+}
+
+.content {
+    float: left;
+    width: 1000px;
+    height: 800px;
+    padding: 20px;
+}
+
+.nav{
+    float: left;
+    width: 180px;
+    height: 800px;
+}
+
+input[type=text] {
+    float: left;
+    height: 50px;
+}
+table {
+    width: 1000px;
+}
+

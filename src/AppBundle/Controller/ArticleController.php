@@ -12,16 +12,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class NowyController extends Controller
+class ArticleController extends Controller
 {
 
     /**
-     * @Route("/art/", name="list_articles")
+     * @Route("/api/art/", name="list_articles")
      * @Method("GET")
      */
     public function listAction(Request $request)
     {
-
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
         $serializer = $this->get('jms_serializer');
@@ -32,14 +31,16 @@ class NowyController extends Controller
         $results = $paginator->paginate(
             $listOfArticles,
             $request->query->get('page'),
-            $request->query->get('limit') ?? 10 );
+            $request->query->get('limit') ?? 10);
+
+        $results = $serializer->serialize($results, 'json');
 
         return new Response($serializer->serialize($results, 'json'), 200, ['content-type' => 'application/json']);
     }
 
 
     /**
-     * @Route ("/art/{id}", name="show_article")
+     * @Route ("/api/art/{id}", name="show_article")
      * @Method("GET")
      * @param $id
      */
@@ -51,12 +52,12 @@ class NowyController extends Controller
 
         $oneArticle = $articleRepository->showOne($id);
 
-        return new Response($serializer->serialize($oneArticle,'json'),200,['content-type'=>'application/json']);
+        return new Response($serializer->serialize($oneArticle, 'json'), 200, ['content-type' => 'application/json']);
     }
 
 
     /**
-     * @Route("/art/{id}", name="delete_article")
+     * @Route("/api/art/{id}", name="delete_article")
      * @Method("DELETE")
      * @param $id
      */
@@ -70,8 +71,9 @@ class NowyController extends Controller
         return new Response(null, 204);
     }
 
+
     /**
-     * @Route("/art/{id}" , name="update_article")
+     * @Route("/api/art/{id}" , name="update_article")
      * @Method("PUT")
      * @param Request $request
      * @param $id
@@ -85,7 +87,7 @@ class NowyController extends Controller
 
         $articleToUpdate = $articleRepository->find($id);
 
-        $form = $this->createForm(ArticleForm::class,$articleToUpdate);
+        $form = $this->createForm(ArticleForm::class, $articleToUpdate);
         $form->submit($requestedBody);
 
         $articleRepository->update($articleToUpdate);
@@ -94,7 +96,7 @@ class NowyController extends Controller
     }
 
     /**
-     * @Route("/art", name="create_article")
+     * @Route("/api/art", name="create_article")
      * @Method("POST")
      * @param Request $request
      */
@@ -104,33 +106,15 @@ class NowyController extends Controller
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
-        $body = json_decode($request->getContent(),true);
+        $body = json_decode($request->getContent(), true);
 
         $newArticle = new Article();
 
-        $form = $this->createForm(ArticleForm::class,$newArticle);
+        $form = $this->createForm(ArticleForm::class, $newArticle);
         $form->submit($body);
 
         $articleRepository->update($newArticle);
 
-        return new Response(null, 201, ['content-type'=>'application/json']);
+        return new Response(null, 201, ['content-type' => 'application/json']);
     }
-
-
-    /**
-     * @Route("/ar", name="listing_articles_via_query")
-     * @Method("GET")
-     */
-    public function listTestAction()
-    {
-        $articleRepository = $this->get('app.repo.articles');
-        $serializer = $this->get('jms_serializer');
-
-        $resultedQuery = $articleRepository->myQuery();
-
-        return new Response($serializer->serialize($resultedQuery,'json'));
-    }
-
-
-
 }

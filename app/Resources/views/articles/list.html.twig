@@ -25,7 +25,7 @@
         </div>
         <div id = "filtr" style="float: left">
             Filter:
-            <form method="">
+            <form action="{{ path('searching') }}">
                 <label>
                     <input type="text" name="search">
                     <input type="submit" value="Find">
@@ -77,7 +77,6 @@
  {% block javascripts %}
 
      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
-     {#<script type = "text/javascript" src="{{ asset('js/listing.js') }}"></script>#}
      <script type="text/javascript">
          $(document).ready(function () {
 

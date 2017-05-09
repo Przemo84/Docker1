@@ -129,14 +129,18 @@ class WebController extends Controller
 
 
     /**
-     * @Route("/a/?search=/{param) , name="seaching"
+     * @Route("/a/?search={word}", name="searching")
      * @param $word
      */
-    public function searchAction($word)
+    public function searchAction($word=null)
     {
+        $zm1 = 'lalalalaa';
         $articleRepository = $this->get('app.repo.articles');
+        dump($zm1);die;
 
         $articleRepository->search($word);
+
+//        return $this->redirectToRoute('list_all_articles');
 
     }
 

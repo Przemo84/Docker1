@@ -68,11 +68,13 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
 
     public function search($word)
     {
-        $this->createQueryBuilder('a')
-            ->select('*')
-            ->from('article.a')
-            ->where("a.title LIKE %{$word}%" )
-            ->getQuery();
+
+//        $this->createNamedQuery("SELECT * FROM")
+//        $this->createQueryBuilder('a')
+//            ->select('*')
+//            ->from('article.a')
+//            ->where("a.title LIKE %{$word}%" )
+//            ->getQuery();
 
     }
 

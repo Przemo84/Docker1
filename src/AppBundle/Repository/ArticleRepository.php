@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Article;
+use function MongoDB\BSON\fromJSON;
 
 
 /**
@@ -39,8 +40,7 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
      */
     public function delete($id = null)
     {
-        if ($id == null)
-        {
+        if ($id == null) {
 
             $this->createQueryBuilder('a')
                 ->delete('AppBundle\Entity\Article')
@@ -53,7 +53,6 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
             $em->remove($deletingRecord);
             $em->flush();
         }
-
     }
 
     /**
@@ -64,6 +63,16 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         $em = $this->getEntityManager();
         $em->persist($article);
         $em->flush();
+    }
+
+
+    public function search($word)
+    {
+        $this->createQueryBuilder('a')
+            ->select('*')
+            ->from('article.a')
+            ->where("a.title LIKE %{$word}%" )
+            ->getQuery();
 
     }
 

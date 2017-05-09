@@ -6,29 +6,87 @@
     </div>
     <div class="content">
         <div class="count">
-            <h4> <u> Total amount of artcles: {{ results.getTotalItemCount }} </u></h4>
+            <h4><u> Total amount of articles: {{ results.getTotalItemCount }} </u></h4>
         </div>
-        <table>
+
+        <div id = "paging" style="float: left; padding-right: 200px">
+            Select number of itmes per page:
+            <form id="formPerPage" action="">
+                <select id="selectPerPage" name="limit">
+                    <option value="10"></option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </form>
+        </div>
+        <div id = "filtr" style="float: left">
+            Filter:
+            <form method="">
+                <label>
+                    <input type="text" name="search">
+                    <input type="submit" value="Find">
+                </label>
+            </form>
+        </div>
+
+        <div style="clear: both"></div>
+
+        <table style="border: 1px darkslateblue solid;">
+            <thead>
             <tr>
-                <th>ID</th>
-                <th>TITLE</th>
-                <th>CONTENT</th>
+                <th>{{ knp_pagination_sortable(results, 'Id', 'a.id') }}</th>
+                <th{% if results.isSorted('a.Title') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(results, 'Title', 'a.title') }}</th>
             </tr>
+            </thead>
+            <tbody>
             {% for result in results %}
                 <tr>
                     <td>{{ result.id }}</td>
                     <td>{{ result.title }}</td>
-                    <td>{{ result.content }}</td>
-                    <td><a href="z">Read</a></td>
-                    <td><a href="x">Edit</a></td>
-                    <td><a href="y">Delete</a></td>
+                    <td><a href="{{ path('show_article',   {'id': result.id }) }}">Read</a></td>
+                    <td><a href="{{ path('update_article', {'id': result.id }) }}">Edit</a></td>
+                    <td>
+                        <form action="{{ path('delete_article', {'id': result.id }) }}" method="post">
+                            <button type="submit"> Delete</button>
+                        </form>
+
+                    </td>
                 </tr>
             {% endfor %}
+            </tbody>
         </table>
+        <br/>
+        <div class="navigator">
+            <form action="{{ path('create_article') }}">
+                <button type="submit">Create New Article</button>
+            </form>
+
+        </div>
+
         <div class="navigation" style="text-align:center">
             {{ knp_pagination_render(results) }}
         </div>
     </div>
 
-
 {% endblock %}
+
+ {% block javascripts %}
+
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+     {#<script type = "text/javascript" src="{{ asset('js/listing.js') }}"></script>#}
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             $("#selectPerPage").on("change", function () {
+
+                 $("#formPerPage").submit();
+
+             });
+         });
+     </script>
+
+ {% endblock %}

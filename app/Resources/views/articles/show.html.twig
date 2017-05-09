@@ -1,0 +1,28 @@
+{% extends 'articles/base.html.twig' %}
+
+{% block body %}
+    <div class="header">
+        <h3>List of articles</h3>
+    </div>
+    <div class="content">
+        <div class="count">
+            <h4><u>TITLE: {{ oneArticle.title }}</u></h4>
+        </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>CONTENT</th>
+            </tr>
+                <tr>
+                    <td>{{ oneArticle.id }}</td>
+                    <td>{{ oneArticle.content }}</td>
+                </tr>
+        </table>
+        <br/>
+        <br/>
+        <a href=" {{ path('list_all_articles') }} ">Back to list</a>
+    </div>
+
+
+
+{% endblock %}

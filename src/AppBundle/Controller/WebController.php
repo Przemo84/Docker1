@@ -4,6 +4,8 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Article;
+use AppBundle\Form\LimiterForm;
+use AppBundle\Form\LimiterFormForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use AppBundle\Form\ArticleForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,18 +28,16 @@ class WebController extends Controller
         /** @ var $paginator $paginator */
         $paginator = $this->get('knp_paginator');
 
-
-        $lista = $articleRepository->listAll();
+        $lista = $articleRepository->listAll($request->query->get('filter'));
 
         $results = $paginator->paginate($lista,
             $request->query->getInt('page', 1),
             $request->query->getInt('limit', 10));
 
-//        $results->
 
         return $this->render('articles/list.html.twig', [
-            'results' => $results
-        ]);
+            'results' => $results]);
+
     }
 
 
@@ -54,9 +54,9 @@ class WebController extends Controller
 
         $article = $articleRepository->showOne($id);
 
+
         return $this->render('articles/show.html.twig', [
-        'oneArticle' => $article
-    ]);
+        'oneArticle' => $article]);
     }
 
     /**
@@ -72,6 +72,7 @@ class WebController extends Controller
         $form = $this->createForm(ArticleForm::class);
         $form->handleRequest($request);
 
+
        if ($form->isSubmitted() && $form->isValid()) {
 
            $newArticle = $form->getData();
@@ -81,7 +82,8 @@ class WebController extends Controller
        }
 
         return $this->render('articles/create.html.twig',[
-            'form' => $form->createView()]);
+            'form' => $form->createView(),
+            ]);
     }
 
 
@@ -92,6 +94,7 @@ class WebController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
@@ -126,21 +129,6 @@ class WebController extends Controller
 
         return $this->redirectToRoute('list_all_articles');
     }
-
-
-    /**
-     * @Route("/a/?search=/{param) , name="seaching"
-     * @param $word
-     */
-    public function searchAction($word)
-    {
-        $articleRepository = $this->get('app.repo.articles');
-
-        $articleRepository->search($word);
-
-    }
-
-
 
 
 }

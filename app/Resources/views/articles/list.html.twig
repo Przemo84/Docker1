@@ -11,7 +11,7 @@
 
         <div id = "paging" style="float: left; padding-right: 200px">
             Select number of itmes per page:
-            <form id="formPerPage" action="">
+            <form id="formPerPage">
                 <select id="selectPerPage" name="limit">
                     <option value="10"></option>
                     <option value="3">3</option>
@@ -23,11 +23,11 @@
                 </select>
             </form>
         </div>
-        <div id = "filtr" style="float: left">
+        <div id = "filter" style="float: left">
             Filter:
-            <form method="">
+            <form action="{{ path('list_all_articles') }}">
                 <label>
-                    <input type="text" name="search">
+                    <input type="text" name="filter" value="">
                     <input type="submit" value="Find">
                 </label>
             </form>

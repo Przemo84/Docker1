@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Article;
+use Doctrine\ORM\Query\AST\LikeExpression;
 use function MongoDB\BSON\fromJSON;
 
 
@@ -16,11 +17,20 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
 
 
-    public function listAll()
+    /**
+     * @param null $filter
+     * @return \Doctrine\ORM\Query
+     */
+    public function listAll($filter = null)
     {
-        $allArticles = $this->createQueryBuilder('a');
+        $articlesQuery = $this->createQueryBuilder('a');
 
-        return $allArticles;
+        if ($filter) {
+            $articlesQuery->where('a.title LIKE :title')
+                ->setParameter('title', '%' . $filter . '%');
+        }
+
+        return $articlesQuery->getQuery();
     }
 
 
@@ -65,15 +75,5 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         $em->flush();
     }
 
-
-    public function search($word)
-    {
-        $this->createQueryBuilder('a')
-            ->select('*')
-            ->from('article.a')
-            ->where("a.title LIKE %{$word}%" )
-            ->getQuery();
-
-    }
 
 }

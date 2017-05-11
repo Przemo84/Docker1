@@ -13,6 +13,15 @@ services:
         arguments:
             - AppBundle\Entity\Article
 
+    app.repo.comments:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\Comments
+
+
+
+
     app.notifier.mail:
       class: AppBundle\Service\Notifier
       arguments:

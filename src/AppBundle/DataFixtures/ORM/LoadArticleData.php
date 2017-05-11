@@ -16,8 +16,8 @@ class LoadArticleData implements FixtureInterface
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 1; $i <= 100; $i++) {
-            $titleFaker = $faker->sentence(1);
+        for ($i = 1; $i <= 110; $i++) {
+            $titleFaker = $faker->sentence(2);
             $contentFaker = $faker->realText($maxNbChars = 300);
 
             $article1 = new Article();

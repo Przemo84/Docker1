@@ -25,6 +25,7 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
     {
         $articlesQuery = $this->createQueryBuilder('a');
 
+
         if ($filter) {
             $articlesQuery->where('a.title LIKE :title')
                 ->setParameter('title', '%' . $filter . '%');
@@ -43,7 +44,6 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
 
         return $oneArticle;
     }
-
 
     /**
      * @param $id

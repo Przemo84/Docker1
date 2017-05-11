@@ -20,9 +20,31 @@
         </table>
         <br/>
         <br/>
-        <a href=" {{ path('list_all_articles') }} ">Back to list</a>
-    </div>
 
+            <form action=" {{ path('list_all_articles') }} ">
+                <button type="submit">Back to list</button>
+            </form>
+            <br/>
+            <br/>
 
+        <div class="commentsContainer">
+            <div class="commentForm">
+                {{ form(commentForm) }}
+                <br/>
+                <br/>
+            </div>
+            </div>
+            <div>
+                <p>Comments:</p>
+            <tr>
+                {% for comment in comments %}
+                    <td class="singleComment"> {{ comment.username }} </td>
+                    <br/>
+                    <td class="singleComment"> {{ comment.comment }} </td>
+                    <br/><br/>
+                {% endfor %}
+            </tr>
+            </div>
+        </div>
 
 {% endblock %}

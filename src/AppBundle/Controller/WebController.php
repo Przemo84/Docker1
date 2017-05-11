@@ -4,6 +4,8 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Article;
+use AppBundle\Form\CommentForm;
+use AppBundle\Form\FilterForm;
 use AppBundle\Form\LimiterForm;
 use AppBundle\Form\LimiterFormForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -17,7 +19,6 @@ class WebController extends Controller
 {
     /**
      * @Route("/a/", name="list_all_articles")
-     * @Method("GET")
      * @ Template("articles/list.html.twig")
      */
     public function listAllAction(Request $request)
@@ -34,29 +35,43 @@ class WebController extends Controller
             $request->query->getInt('page', 1),
             $request->query->getInt('limit', 10));
 
-
         return $this->render('articles/list.html.twig', [
             'results' => $results]);
-
     }
 
 
     /**
-     * @Route ("/a/{id}", name="show_article")
-     * @Method("GET")
+     * @Route ("/a/read/{id}", name="show_article")
      * @param $id
      */
-    public function showAction($id)
+    public function showAction($id, Request $request)
     {
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
-        $serializer = $this->get('serializer');
+
+        /** @var $commentRepository $commentRepository */
+        $commentRepository = $this->get('app.repo.comments');
 
         $article = $articleRepository->showOne($id);
+        $comments = $commentRepository->listComments($id);
 
+        $commentForm = $this->createForm(CommentForm::class);
+        $commentForm->handleRequest($request);
+
+        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+
+            $newComment = $commentForm->getData();
+            $newComment->setIdArticle($id);
+
+            $commentRepository->createComment($newComment);
+
+            return $this->redirectToRoute('show_article', ['id' => $id]);
+        }
 
         return $this->render('articles/show.html.twig', [
-        'oneArticle' => $article]);
+            'oneArticle' => $article,
+            'comments' => $comments,
+            'commentForm' => $commentForm->createView()]);
     }
 
     /**
@@ -73,17 +88,17 @@ class WebController extends Controller
         $form->handleRequest($request);
 
 
-       if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-           $newArticle = $form->getData();
-           $articleRepository->update($newArticle);
+            $newArticle = $form->getData();
+            $articleRepository->update($newArticle);
 
-           return $this->redirectToRoute('list_all_articles');
-       }
+            return $this->redirectToRoute('list_all_articles');
+        }
 
-        return $this->render('articles/create.html.twig',[
+        return $this->render('articles/create.html.twig', [
             'form' => $form->createView(),
-            ]);
+        ]);
     }
 
 
@@ -103,7 +118,7 @@ class WebController extends Controller
         $form = $this->createForm(ArticleForm::class, $articleToUpdate);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $articleToUpdate = $form->getData();
             $articleRepository->update($articleToUpdate);
@@ -111,10 +126,9 @@ class WebController extends Controller
             return $this->redirectToRoute('list_all_articles');
         }
 
-        return $this->render('articles/update.html.twig',[
+        return $this->render('articles/update.html.twig', [
             'form' => $form->createView()]);
     }
-
 
     /**
      * @Route("/a/{id}", name="delete_article")

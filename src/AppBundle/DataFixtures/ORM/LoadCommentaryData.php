@@ -2,9 +2,10 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
+use AppBundle\Entity\Article;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use AppBundle\Entity\Comments;
+use AppBundle\Entity\Commentary;
 use Faker;
 
 class LoadCommentaryData implements FixtureInterface
@@ -16,15 +17,18 @@ class LoadCommentaryData implements FixtureInterface
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i <= 50; $i++) {
+        for ($i = 0; $i <= 80; $i++) {
             $userFaker = $faker->firstNameFemale;
             $commentFaker = $faker->realText($maxNbChars = 160);
-            $idArticleFaker = $faker->numberBetween($min =1, $max=20);
+            $idArticleFaker = $faker->numberBetween($min =1, $max=25);
 
-            $comment = new Comments();
+            $article = new Article();
+
+
+            $comment = new Commentary();
             $comment->setUsername($userFaker);
             $comment->setComment($commentFaker);
-            $comment->setIdArticle($idArticleFaker);
+            $comment->setArticle();
 
             $manager->persist($comment);
             $manager->flush();

@@ -1,0 +1,21 @@
+AppBundle\Entity\Article:
+    type: entity
+    oneToMany:
+      comments:
+        targetEntity: AppBundle\Entity\Commentary
+        mappedBy: article
+
+    table: null
+    repositoryClass: AppBundle\Repository\ArticleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: text
+        content:
+            type: text
+    lifecycleCallbacks: {  }

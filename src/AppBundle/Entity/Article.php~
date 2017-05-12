@@ -89,38 +89,5 @@ class Article
     {
         return $this->content;
     }
-
-    /**
-     * Add comment
-     *
-     * @param \AppBundle\Entity\Commentary $comment
-     *
-     * @return Article
-     */
-    public function addComment(\AppBundle\Entity\Commentary $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \AppBundle\Entity\Commentary $comment
-     */
-    public function removeComment(\AppBundle\Entity\Commentary $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
 }
+

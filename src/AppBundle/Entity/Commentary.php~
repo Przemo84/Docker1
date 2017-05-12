@@ -1,0 +1,116 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Commentary
+ */
+class Commentary
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $username;
+
+    /**
+     * @var string
+     */
+    private $comment;
+
+    /**
+     * @var int
+     */
+    private $articleId;
+
+
+    private $article;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return Commentary
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     *
+     * @return Commentary
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set articleId
+     *
+     * @param integer $articleId
+     *
+     * @return Commentary
+     */
+    public function setArticleId($articleId)
+    {
+        $this->articleId = $articleId;
+
+        return $this;
+    }
+
+    /**
+     * Get articleId
+     *
+     * @return int
+     */
+    public function getArticleId()
+    {
+        return $this->articleId;
+    }
+}
+

@@ -17,7 +17,7 @@ services:
         class: Doctrine\ORM\EntityRepository
         factory: ['@doctrine.orm.default_entity_manager', getRepository]
         arguments:
-            - AppBundle\Entity\Comments
+            - AppBundle\Entity\Commentary
 
 
 

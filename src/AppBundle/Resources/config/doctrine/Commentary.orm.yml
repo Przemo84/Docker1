@@ -1,0 +1,25 @@
+AppBundle\Entity\Commentary:
+    type: entity
+    manyToOne:
+      article:
+        targetEntity: AppBundle\Entity\Article
+        inversedBy: comments
+
+    table: null
+    repositoryClass: AppBundle\Repository\CommentaryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: '40'
+        comment:
+            type: text
+        articleId:
+            type: integer
+            column: article_id
+    lifecycleCallbacks: {  }

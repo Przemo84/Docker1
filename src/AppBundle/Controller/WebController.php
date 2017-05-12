@@ -3,12 +3,8 @@
 namespace AppBundle\Controller;
 
 
-use AppBundle\Entity\Article;
 use AppBundle\Form\CommentForm;
-use AppBundle\Form\FilterForm;
-use AppBundle\Form\LimiterForm;
-use AppBundle\Form\LimiterFormForm;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
 use AppBundle\Form\ArticleForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,11 +45,12 @@ class WebController extends Controller
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
-        /** @var $commentRepository $commentRepository */
-        $commentRepository = $this->get('app.repo.comments');
+        /** @var $commentaryRepository $commentaryRepository */
+        $commentaryRepository = $this->get('app.repo.comments');
 
         $article = $articleRepository->showOne($id);
-        $comments = $commentRepository->listComments($id);
+        $comments = $commentaryRepository->listComments($id);
+
 
         $commentForm = $this->createForm(CommentForm::class);
         $commentForm->handleRequest($request);
@@ -63,7 +60,8 @@ class WebController extends Controller
             $newComment = $commentForm->getData();
             $newComment->setIdArticle($id);
 
-            $commentRepository->createComment($newComment);
+            $commentaryRepository->createComment($newComment);
+
 
             return $this->redirectToRoute('show_article', ['id' => $id]);
         }

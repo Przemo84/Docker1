@@ -6,13 +6,61 @@ namespace AppBundle\Controller;
 use AppBundle\Form\CommentForm;
 
 use AppBundle\Form\ArticleForm;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 class WebController extends Controller
 {
+
+//    /**
+//     * Lists all Post entities.
+//     *
+//     * @param Request $request
+//     *
+//     * @Route("/aa/", name="post_index")
+//     * @Method("GET")
+//     *
+//     * @return Response
+//     */
+//    public function indexAction(Request $request)
+//    {
+//        $isAjax = $request->isXmlHttpRequest();
+//
+//        // Get your Datatable ...
+//        $datatable = $this->get('app.datatable.article');
+//        $datatable->buildDatatable();
+//
+//        // or use the DatatableFactory
+//        /** @var DatatableInterface $datatable */
+////        $datatable = $this->get('sg_datatables.factory')->create(PostDatatable::class);
+////        $datatable->buildDatatable();
+//
+//        if ($isAjax) {
+//            $responseService = $this->get('sg_datatables.response');
+//            $responseService->setDatatable($datatable);
+//
+//            $datatableQueryBuilder = $responseService->getDatatableQueryBuilder();
+//            $datatableQueryBuilder->buildQuery();
+//
+//            //dump($datatableQueryBuilder->getQb()->getDQL()); die();
+//
+//            return $responseService->getResponse();
+//        }
+//
+//        return $this->render('articles/list.html.twig', array(
+//            'results' => $datatable,
+//        ));
+//    }
+
+
+
+
+
+
     /**
      * @Route("/a/", name="list_all_articles")
      * @ Template("articles/list.html.twig")
@@ -40,7 +88,7 @@ class WebController extends Controller
      * @Route ("/a/read/{id}", name="show_article")
      * @param $id
      */
-    public function showAction($id, Request $request)
+    public function showAction2($id, Request $request)
     {
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');

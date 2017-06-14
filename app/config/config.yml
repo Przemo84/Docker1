@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -33,6 +33,7 @@ framework:
     assets: ~
     php_errors:
         log: true
+
 
 # Twig Configuration
 twig:
@@ -80,3 +81,8 @@ knp_paginator:
     template:
         pagination: 'KnpPaginatorBundle:Pagination:sliding.html.twig'     # sliding pagination controls template
         sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig' # sort link template
+
+#Alice
+hautelook_alice:
+    fixtures_path: 'Resources/fixtures/orm'
+

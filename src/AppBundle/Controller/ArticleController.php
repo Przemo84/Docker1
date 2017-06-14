@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-
 use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleForm;
 use AppBundle\Repository\ArticleRepository;
@@ -24,7 +23,7 @@ class ArticleController extends Controller
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
         $serializer = $this->get('jms_serializer');
-        $paginator = $this->get('knp_paginator');
+        $paginator = $this-g>get('knp_paginator');
 
         $listOfArticles = $articleRepository->listAll();
 

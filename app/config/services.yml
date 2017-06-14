@@ -21,9 +21,13 @@ services:
 
 
 
-
     app.notifier.mail:
       class: AppBundle\Service\Notifier
       arguments:
             - "@mailer"
             - "@logger"
+
+
+    app.datatable.article:
+      class: AppBundle\Datatables\ArticleDatatable
+      parent: sg_datatables.datatable.abstract

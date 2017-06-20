@@ -16,49 +16,40 @@ use Symfony\Component\Routing\Annotation\Route;
 class WebController extends Controller
 {
 
-//    /**
-//     * Lists all Post entities.
-//     *
-//     * @param Request $request
-//     *
-//     * @Route("/aa/", name="post_index")
-//     * @Method("GET")
-//     *
-//     * @return Response
-//     */
-//    public function indexAction(Request $request)
-//    {
-//        $isAjax = $request->isXmlHttpRequest();
-//
-//        // Get your Datatable ...
-//        $datatable = $this->get('app.datatable.article');
-//        $datatable->buildDatatable();
-//
-//        // or use the DatatableFactory
-//        /** @var DatatableInterface $datatable */
-////        $datatable = $this->get('sg_datatables.factory')->create(PostDatatable::class);
-////        $datatable->buildDatatable();
-//
-//        if ($isAjax) {
-//            $responseService = $this->get('sg_datatables.response');
-//            $responseService->setDatatable($datatable);
-//
-//            $datatableQueryBuilder = $responseService->getDatatableQueryBuilder();
-//            $datatableQueryBuilder->buildQuery();
-//
-//            //dump($datatableQueryBuilder->getQb()->getDQL()); die();
-//
-//            return $responseService->getResponse();
-//        }
-//
-//        return $this->render('articles/list.html.twig', array(
-//            'results' => $datatable,
-//        ));
-//    }
+    /**
+     * Lists all Post entities.
+     *
+     * @param Request $request
+     *
+     * @Route("/aa/", name="article_index",  options={"expose"=true})
+     * @Method("GET")
+     *
+     * @return Response
+     */
+    public function indexAction(Request $request)
+    {
+        $isAjax = $request->isXmlHttpRequest();
 
+        $datatable = $this->get('app.datatable.article');
+        $datatable->buildDatatable();
 
+        if ($isAjax) {
+            $responseService = $this->get('sg_datatables.response');
+            $responseService->setDatatable($datatable);
 
+            $datatableQueryBuilder = $responseService->getDatatableQueryBuilder();
 
+            $datatableQueryBuilder->buildQuery();
+
+//            dump($datatableQueryBuilder->getQb()->getDQL()); die();
+
+            return $responseService->getResponse();
+        }
+
+        return $this->render('articles/list2.html.twig', [
+            'datatable' => $datatable,
+        ]);
+    }
 
 
     /**
@@ -85,7 +76,7 @@ class WebController extends Controller
 
 
     /**
-     * @Route ("/a/read/{id}", name="show_article")
+     * @Route ("/a/read/{id}", name="show_article", options={"expose"=true})
      * @param $id
      */
     public function showAction2($id, Request $request)
@@ -106,7 +97,7 @@ class WebController extends Controller
         if ($commentForm->isSubmitted() && $commentForm->isValid()) {
 
             $newComment = $commentForm->getData();
-            $newComment->setIdArticle($id);
+            $newComment->setArticle($article);
 
             $commentaryRepository->createComment($newComment);
 
@@ -139,7 +130,7 @@ class WebController extends Controller
             $newArticle = $form->getData();
             $articleRepository->update($newArticle);
 
-            return $this->redirectToRoute('list_all_articles');
+            return $this->redirectToRoute('article_index');
         }
 
         return $this->render('articles/create.html.twig', [
@@ -169,7 +160,7 @@ class WebController extends Controller
             $articleToUpdate = $form->getData();
             $articleRepository->update($articleToUpdate);
 
-            return $this->redirectToRoute('list_all_articles');
+            return $this->redirectToRoute('article_index');
         }
 
         return $this->render('articles/update.html.twig', [
@@ -187,7 +178,7 @@ class WebController extends Controller
 
         $articleRepository->delete($id);
 
-        return $this->redirectToRoute('list_all_articles');
+        return $this->redirectToRoute('article_index');
     }
 
 

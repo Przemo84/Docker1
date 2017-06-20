@@ -2,49 +2,44 @@
 
 {% block body %}
     <div class="header">
-        <h3>List of articles</h3>
+        <br/>
+        <br/>
     </div>
     <div class="content">
         <div class="count">
-            <h4><u>TITLE: {{ oneArticle.title }}</u></h4>
-        </div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>CONTENT</th>
-            </tr>
-                <tr>
-                    <td>{{ oneArticle.id }}</td>
-                    <td>{{ oneArticle.content }}</td>
-                </tr>
-        </table>
-        <br/>
-        <br/>
+            <h3><u> ARTICLE TITLE: {{ oneArticle.title }}</u></h3>
+            <h4>ID: {{ oneArticle.id }} </h4>
+            <h4>CONTENT:</h4> <br>
+            {{ oneArticle.content }}
 
-            <form action=" {{ path('list_all_articles') }} ">
-                <button type="submit">Back to list</button>
-            </form>
-            <br/>
-            <br/>
+        </div>
+        <br/>
+        <br/>
+        <hr>
+        <form action=" {{ path('article_index') }} ">
+            <button type="submit">Back to list</button>
+        </form>
+        <br/>
+        <br/>
 
         <div class="commentsContainer">
             <div class="commentForm">
                 {{ form(commentForm) }}
                 <br/>
-                <br/>
             </div>
-            </div>
-            <div>
-                <p>Comments:</p>
+        </div>
+        <div>
+            <hr>
+            <h3>Comments:</h3>
             <tr>
                 {% for comment in comments %}
-                    <td class="singleComment"> {{ comment.username }} </td>
+                    <td class="singleComment"><b> {{ comment.username }} </b></td>
                     <br/>
                     <td class="singleComment"> {{ comment.comment }} </td>
                     <br/><br/>
                 {% endfor %}
             </tr>
-            </div>
         </div>
+    </div>
 
 {% endblock %}

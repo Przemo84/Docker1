@@ -37,48 +37,42 @@ class ArticleDatatable extends AbstractDatatable
         ));
 
         $this->ajax->set(array(
+//            'url' => $this->router->generate('article_index'),
+//            'type' => 'GET',
+//            'pipeline' => 10
         ));
 
         $this->options->set(array(
+            'classes' => Style::BOOTSTRAP_3_STYLE,
             'individual_filtering' => true,
             'individual_filtering_position' => 'head',
             'order_cells_top' => true,
         ));
 
-        $this->features->set(array(
-        ));
+        $this->features->set(array());
 
         $this->columnBuilder
             ->add('id', Column::class, array(
                 'title' => 'Id',
-                ))
+                'searchable' => true,
+                'orderable' => true,
+            ))
             ->add('title', Column::class, array(
                 'title' => 'Title',
-                ))
+                'searchable' => true,
+                'orderable' => true,
+            ))
             ->add('content', Column::class, array(
                 'title' => 'Content',
-                ))
-            ->add('comments.id', Column::class, array(
-                'title' => 'Comments Id',
-                'data' => 'comments[, ].id'
-                ))
-            ->add('comments.username', Column::class, array(
-                'title' => 'Comments Username',
-                'data' => 'comments[, ].username'
-                ))
-            ->add('comments.comment', Column::class, array(
-                'title' => 'Comments Comment',
-                'data' => 'comments[, ].comment'
-                ))
-            ->add('comments.articleId', Column::class, array(
-                'title' => 'Comments ArticleId',
-                'data' => 'comments[, ].articleId'
-                ))
+                'searchable' => true,
+                'orderable' => true,
+            ))
+
             ->add(null, ActionColumn::class, array(
                 'title' => $this->translator->trans('sg.datatables.actions.title'),
                 'actions' => array(
                     array(
-                        'route' => 'article_show',
+                        'route' => 'show_article',
                         'route_parameters' => array(
                             'id' => 'id'
                         ),
@@ -92,7 +86,7 @@ class ArticleDatatable extends AbstractDatatable
                         ),
                     ),
                     array(
-                        'route' => 'article_edit',
+                        'route' => 'update_article',
                         'route_parameters' => array(
                             'id' => 'id'
                         ),
@@ -104,10 +98,21 @@ class ArticleDatatable extends AbstractDatatable
                             'class' => 'btn btn-primary btn-xs',
                             'role' => 'button'
                         ),
+                    ),
+                    array(
+                        'route' => 'delete_article',
+                        'route_parameters' => array(
+                            'id' => 'id'
+                        ),
+                        'label' => $this->translator->trans('Delete'),
+                        'attributes' => array(
+//                            'rel' => 'tooltip',
+                            'class' => 'btn btn-primary btn-xs',
+                            'role' => 'button'
+                        ),
                     )
                 )
-            ))
-        ;
+            ));
     }
 
     /**

@@ -14,8 +14,8 @@ class CommentaryRepository extends \Doctrine\ORM\EntityRepository
     /**
      * @param $id
      */
-    public function listComments ($id) {
-
+    public function listComments($id)
+    {
         $queryBuilder = $this->createQueryBuilder('c')
             ->where('c.articleId =  :idArticle')
             ->setParameter('idArticle', $id);
@@ -26,12 +26,13 @@ class CommentaryRepository extends \Doctrine\ORM\EntityRepository
     /**
      * @param $comment
      */
-    public function createComment($comment) {
-
+    public function createComment($comment)
+    {
         $em = $this->getEntityManager();
         $em->persist($comment);
         $em->flush();
     }
+
 }
 
 

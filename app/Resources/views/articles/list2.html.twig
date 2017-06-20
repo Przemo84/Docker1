@@ -1,0 +1,15 @@
+{% extends 'articles/base.html.twig' %}
+
+{% block body %}
+        <h3>List of articles</h3>
+    <div class="content">
+        <div class="navigator">
+            <form action="{{ path('create_article') }}">
+                <button type="submit">Create New Article</button>
+            </form>
+        </div>
+        <hr>
+        {{ sg_datatables_render(datatable) }}
+    </div>
+
+{% endblock %}

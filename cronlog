@@ -1,0 +1,92 @@
+
+Fatal error: Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "FOSJsRoutingBundle" from namespace "FOS\JsRoutingBundle".
+Did you forget a "use" statement for another namespace? in /var/www/symfony/app/AppKernel.php:21
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(406): AppKernel->registerBundles()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(113): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(68): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(121): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/symfony/bin/console(28): Symfony\Component\Console\Application->run(O in /var/www/symfony/app/AppKernel.php on line 21
+
+Fatal error: Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "FOSJsRoutingBundle" from namespace "FOS\JsRoutingBundle".
+Did you forget a "use" statement for another namespace? in /var/www/symfony/app/AppKernel.php:21
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(406): AppKernel->registerBundles()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(113): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(68): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(121): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/symfony/bin/console(28): Symfony\Component\Console\Application->run(O in /var/www/symfony/app/AppKernel.php on line 21
+
+Fatal error: Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "FOSJsRoutingBundle" from namespace "FOS\JsRoutingBundle".
+Did you forget a "use" statement for another namespace? in /var/www/symfony/app/AppKernel.php:21
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(406): AppKernel->registerBundles()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(113): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(68): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(121): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/symfony/bin/console(28): Symfony\Component\Console\Application->run(O in /var/www/symfony/app/AppKernel.php on line 21
+
+Fatal error: Uncaught Symfony\Component\Debug\Exception\ClassNotFoundException: Attempted to load class "FOSJsRoutingBundle" from namespace "FOS\JsRoutingBundle".
+Did you forget a "use" statement for another namespace? in /var/www/symfony/app/AppKernel.php:21
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(406): AppKernel->registerBundles()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Kernel.php(113): Symfony\Component\HttpKernel\Kernel->initializeBundles()
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Console/Application.php(68): Symfony\Component\HttpKernel\Kernel->boot()
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Console/Application.php(121): Symfony\Bundle\FrameworkBundle\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/symfony/bin/console(28): Symfony\Component\Console\Application->run(O in /var/www/symfony/app/AppKernel.php on line 21
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Doctrine\DBAL\DBALException: The given 'driver' pdo_mysqlpdo_mysql is unknown, Doctrine currently supports only the following drivers: pdo_mysql, pdo_sqlite, pdo_pgsql, pdo_oci, oci8, ibm_db2, pdo_sqlsrv, mysqli, drizzle_pdo_mysql, sqlanywhere, sqlsrv in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php:107
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(207): Doctrine\DBAL\DBALException::unknownDriver('pdo_mysqlpdo_my...', Array)
+#1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
+#2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
+#3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107

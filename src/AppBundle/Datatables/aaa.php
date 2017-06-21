@@ -1,30 +1,4 @@
 <?php
-
-namespace AppBundle\Datatables;
-
-use Sg\DatatablesBundle\Datatable\AbstractDatatable;
-use Sg\DatatablesBundle\Datatable\Style;
-use Sg\DatatablesBundle\Datatable\Column\Column;
-use Sg\DatatablesBundle\Datatable\Column\BooleanColumn;
-use Sg\DatatablesBundle\Datatable\Column\ActionColumn;
-use Sg\DatatablesBundle\Datatable\Column\MultiselectColumn;
-use Sg\DatatablesBundle\Datatable\Column\VirtualColumn;
-use Sg\DatatablesBundle\Datatable\Column\DateTimeColumn;
-use Sg\DatatablesBundle\Datatable\Column\ImageColumn;
-use Sg\DatatablesBundle\Datatable\Filter\TextFilter;
-use Sg\DatatablesBundle\Datatable\Filter\NumberFilter;
-use Sg\DatatablesBundle\Datatable\Filter\SelectFilter;
-use Sg\DatatablesBundle\Datatable\Filter\DateRangeFilter;
-use Sg\DatatablesBundle\Datatable\Editable\CombodateEditable;
-use Sg\DatatablesBundle\Datatable\Editable\SelectEditable;
-use Sg\DatatablesBundle\Datatable\Editable\TextareaEditable;
-use Sg\DatatablesBundle\Datatable\Editable\TextEditable;
-
-/**
- * Class ArticleDatatable
- *
- * @package AppBundle\Datatables
- */
 class ArticleDatatable extends AbstractDatatable
 {
     /**
@@ -69,11 +43,9 @@ class ArticleDatatable extends AbstractDatatable
             ))
             ->add('image', ImageColumn::class, array(
                 'title' => 'Image',
-                'searchable' => false,
-                'orderable' => false,
                 'imagine_filter' => 'thumbnail_50_x_50',
                 'imagine_filter_enlarged' => 'thumbnail_250_x_250',
-                'relative_path' => '/uploads/images',
+                'relative_path' => 'images',
                 'holder_url' => 'https://placehold.it',
                 'enlarge' => true,
             ))

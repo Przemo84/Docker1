@@ -1,0 +1,4 @@
+AppBundle\Entity\Article:
+    imageFile:
+        mapping: article_image
+        filename_property: image

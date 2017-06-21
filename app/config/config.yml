@@ -7,6 +7,18 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    vich_uploader:
+            db_driver: orm
+
+            mappings:
+                article_image:
+                    uri_prefix:         /uploads/images
+                    images_directory: '%kernel.root_dir%/../web/uploads/images'
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true
+
+
 
 framework:
     #esi: ~
@@ -85,4 +97,8 @@ knp_paginator:
 #Alice
 hautelook_alice:
     fixtures_path: 'Resources/fixtures/orm'
+
+
+
+
 

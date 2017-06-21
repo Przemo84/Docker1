@@ -3,11 +3,14 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Article;
 use AppBundle\Form\CommentForm;
 
 use AppBundle\Form\ArticleForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -117,7 +120,6 @@ class WebController extends Controller
      */
     public function createAction(Request $request)
     {
-
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
@@ -128,6 +130,16 @@ class WebController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $newArticle = $form->getData();
+            $file = $newArticle->getImageFile();
+
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            $file->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
+            $newArticle->setImage($fileName);
             $articleRepository->update($newArticle);
 
             return $this->redirectToRoute('article_index');
@@ -180,6 +192,35 @@ class WebController extends Controller
 
         return $this->redirectToRoute('article_index');
     }
+
+
+//    /**
+//     * @Route("/aa", name="store_file")
+//     * @Method("POST")
+//     */
+//    public function storeImage()
+//    {
+//        $targetPath = substr(__DIR__, 0, -10) . "Images/";
+//        $targetPath = $targetPath . $_FILES['uploadedFile']['name'];
+////        dump($_FILES['uploadedFile']['type']);die;
+//
+//        if (substr($_FILES['uploadedFile']['name'], -3) == 'jpg') {
+//
+//            if ($_FILES['uploadedFile']['size'] < 200000) {
+//
+//                if (move_uploaded_file($_FILES['uploadedFile']['tmp_name'], $targetPath)) {
+//                    echo "File: " . $_FILES['uploadedFile']['name'] . " has been uploaded to Images/";
+//                } else {
+//                    echo "Error when uploading a file. Try again.";
+//                }
+//            }
+//            echo 'Image size is to large. Maximum size of an image is 200kB.';
+//        }
+//        echo "Type of image file must be jpg, png, gif or bmp";
+//
+//
+//        return $this->redirectToRoute('article_index');
+//    }
 
 
 }

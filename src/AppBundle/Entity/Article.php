@@ -1,7 +1,9 @@
 <?php
 
 namespace AppBundle\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Article
@@ -25,6 +27,12 @@ class Article
 
 
     private $comments;
+
+
+    private $image;
+
+    private $imageFile;
+
 
     public function __construct()
     {
@@ -123,4 +131,41 @@ class Article
     {
         return $this->comments;
     }
+
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param mixed $imageFile
+     */
+    public function setImageFile(File $imageFile = null)
+    {
+        $this->imageFile = $imageFile;
+
+//        if ($imageFile) {
+//            // It is required that at least one field changes if you are using doctrine
+//            // otherwise the event listeners won't be called and the file is lost
+//            $this->updatedAt = new \DateTime();
+//        }
+        return $this;
+    }
+
 }

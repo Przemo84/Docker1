@@ -73,6 +73,9 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         $em = $this->getEntityManager();
         $em->persist($article);
         $em->flush();
+
+
+
     }
 
 }

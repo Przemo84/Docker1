@@ -90,3 +90,243 @@ Stack trace:
 #1 /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DriverManager.php(153): Doctrine\DBAL\DriverManager::_checkParams(Array)
 #2 /var/www/symfony/vendor/doctrine/doctrine-bundle/ConnectionFactory.php(57): Doctrine\DBAL\DriverManager::getConnection(Array, Object(Doctrine\DBAL\Configuration), Object(Symfony\Bridge\Doctrine\ContainerAwareEventManager))
 #3 /var/www/symfony/var/cache/dev/appDevDebugProjectContainer.php(923): Doctrine\Bundle\DoctrineBundle\ConnectionFactory->createConnection(Array, Object(Doc in /var/www/symfony/vendor/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php on line 107
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: The parameter "images_directory" has a dependency on a non-existent parameter "kernel.project_dir". Did you mean one of these: "kernel.root_dir", "kernel.cache_dir", "kernel.logs_dir"? in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('kernel.project_...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(232): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('kernel.project_...')
+#2 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#3 /var/www/sy in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: The parameter "images_directory" has a dependency on a non-existent parameter "kernel.project_dir". Did you mean one of these: "kernel.root_dir", "kernel.cache_dir", "kernel.logs_dir"? in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('kernel.project_...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(232): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('kernel.project_...')
+#2 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#3 /var/www/sy in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: The parameter "images_directory" has a dependency on a non-existent parameter "kernel.project_dir". Did you mean one of these: "kernel.root_dir", "kernel.cache_dir", "kernel.logs_dir"? in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('kernel.project_...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(232): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('kernel.project_...')
+#2 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#3 /var/www/sy in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: The parameter "images_directory" has a dependency on a non-existent parameter "kernel.project_dir". Did you mean one of these: "kernel.root_dir", "kernel.cache_dir", "kernel.logs_dir"? in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('kernel.project_...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(232): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('kernel.project_...')
+#2 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#3 /var/www/sy in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 16 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(14, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 99 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(97, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 99 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(97, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 99 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(97, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Unexpected characters near "%kernel.root_dir%/../web/uploads/images'" at line 99 (near "upload_destination: ''%kernel.root_dir%/../web/uploads/images'"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Inline.php:112
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(575): Symfony\Component\Yaml\Inline::parse('''%kernel.root_...', 256, Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(286): Symfony\Component\Yaml\Parser->parseValue('''%kernel.root_...', 256, 'mapping')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('/uploads/images', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(97, 'uri_prefix:    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.ph in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: There is no extension able to load the configuration for "vich_uploader" (in /var/www/symfony/app/config/config.yml). Looked for namespace "vich_uploader", found "framework", "security", "twig", "monolog", "swiftmailer", "doctrine", "sensio_framework_extra", "jms_serializer", "knp_paginator", "fos_js_routing", "sg_datatables", "debug", "web_profiler", "sensio_distribution", "nelmio_alice", "fidry_alice_data_fixtures", "hautelook_alice" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php:431
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(401): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/var/www/symfon...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loa in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: There is no extension able to load the configuration for "vich_uploader" (in /var/www/symfony/app/config/config.yml). Looked for namespace "vich_uploader", found "framework", "security", "twig", "monolog", "swiftmailer", "doctrine", "sensio_framework_extra", "jms_serializer", "knp_paginator", "fos_js_routing", "sg_datatables", "debug", "web_profiler", "sensio_distribution", "nelmio_alice", "fidry_alice_data_fixtures", "hautelook_alice" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php:431
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(401): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/var/www/symfon...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loa in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: There is no extension able to load the configuration for "vich_uploader" (in /var/www/symfony/app/config/config.yml). Looked for namespace "vich_uploader", found "framework", "security", "twig", "monolog", "swiftmailer", "doctrine", "sensio_framework_extra", "jms_serializer", "knp_paginator", "fos_js_routing", "sg_datatables", "debug", "web_profiler", "sensio_distribution", "nelmio_alice", "fidry_alice_data_fixtures", "hautelook_alice" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php:431
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(401): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/var/www/symfon...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loa in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: There is no extension able to load the configuration for "vich_uploader" (in /var/www/symfony/app/config/config.yml). Looked for namespace "vich_uploader", found "framework", "security", "twig", "monolog", "swiftmailer", "doctrine", "sensio_framework_extra", "jms_serializer", "knp_paginator", "fos_js_routing", "sg_datatables", "debug", "web_profiler", "sensio_distribution", "nelmio_alice", "fidry_alice_data_fixtures", "hautelook_alice" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php:431
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(401): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/var/www/symfon...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loa in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118

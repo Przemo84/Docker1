@@ -22,4 +22,5 @@ AppBundle\Entity\Commentary:
         articleId:
             type: integer
             column: article_id
+
     lifecycleCallbacks: {  }

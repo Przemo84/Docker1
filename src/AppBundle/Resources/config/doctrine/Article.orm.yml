@@ -20,7 +20,4 @@ AppBundle\Entity\Article:
             type: text
         image:
             type: string
-        imageFile:
-            type: file
-            fileNameProperty: file
     lifecycleCallbacks: {  }

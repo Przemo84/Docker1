@@ -19,7 +19,8 @@ class ArticleForm extends AbstractType
             ->add('title', TextareaType::class)
             ->add('content', TextareaType::class)
             ->add('imageFile', FileType::class, [
-                'label' => 'Choose an image (JPG file)'])
+                'label' => 'Choose an image (JPG file)',
+                'required'   => false,])
             ->add('Save',SubmitType::class);
     }
 

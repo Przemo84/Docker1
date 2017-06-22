@@ -126,72 +126,72 @@ class WebController extends Controller
         $form = $this->createForm(ArticleForm::class);
         $form->handleRequest($request);
 
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             $newArticle = $form->getData();
+
+            if ($newArticle->getImageFile()) {
+
             $file = $newArticle->getImageFile();
 
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
 
-            $file->move(
-                $this->getParameter('images_directory'),
-                $fileName
-            );
+            $file->move( $this->getParameter('images_directory'), $fileName  );
 
             $newArticle->setImage($fileName);
-            $articleRepository->update($newArticle);
-
-            return $this->redirectToRoute('article_index');
         }
-
-        return $this->render('articles/create.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
-
-
-    /**
-     * @Route("/a/update/{id}" , name="update_article")
-     * @param Request $request
-     * @param $id
-     */
-    public function updateAction(Request $request, $id)
-    {
-
-        /** @var $articleRepository $articleRepository */
-        $articleRepository = $this->get('app.repo.articles');
-
-        $articleToUpdate = $articleRepository->find($id);
-
-        $form = $this->createForm(ArticleForm::class, $articleToUpdate);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $articleToUpdate = $form->getData();
-            $articleRepository->update($articleToUpdate);
-
-            return $this->redirectToRoute('article_index');
-        }
-
-        return $this->render('articles/update.html.twig', [
-            'form' => $form->createView()]);
-    }
-
-    /**
-     * @Route("/a/{id}", name="delete_article")
-     * @param $id
-     */
-    public function deleteAction($id = null)
-    {
-        /** @var $articleRepository $articleRepository */
-        $articleRepository = $this->get('app.repo.articles');
-
-        $articleRepository->delete($id);
+        $articleRepository->update($newArticle);
 
         return $this->redirectToRoute('article_index');
     }
+
+return $this->render('articles/create.html.twig', ['form' => $form->createView(),]);
+}
+
+
+/**
+ * @Route("/a/update/{id}" , name="update_article")
+ * @param Request $request
+ * @param $id
+ */
+public
+function updateAction(Request $request, $id)
+{
+
+    /** @var $articleRepository $articleRepository */
+    $articleRepository = $this->get('app.repo.articles');
+
+    $articleToUpdate = $articleRepository->find($id);
+
+    $form = $this->createForm(ArticleForm::class, $articleToUpdate);
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+
+        $articleToUpdate = $form->getData();
+        $articleRepository->update($articleToUpdate);
+
+        return $this->redirectToRoute('article_index');
+    }
+
+    return $this->render('articles/update.html.twig', [
+        'form' => $form->createView()]);
+}
+
+/**
+ * @Route("/a/{id}", name="delete_article")
+ * @param $id
+ */
+public
+function deleteAction($id = null)
+{
+    /** @var $articleRepository $articleRepository */
+    $articleRepository = $this->get('app.repo.articles');
+
+    $articleRepository->delete($id);
+
+    return $this->redirectToRoute('article_index');
+}
 
 
 //    /**

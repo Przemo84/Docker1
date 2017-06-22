@@ -8,3 +8,6 @@ fos_js_routing:
 sg_datatables_bundle:
     resource: "@SgDatatablesBundle/Controller/"
     type:     annotation
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

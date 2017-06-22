@@ -16,7 +16,6 @@ use function MongoDB\BSON\fromJSON;
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
 
-
     /**
      * @param null $filter
      * @return \Doctrine\ORM\Query
@@ -73,9 +72,6 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
         $em = $this->getEntityManager();
         $em->persist($article);
         $em->flush();
-
-
-
     }
 
 }

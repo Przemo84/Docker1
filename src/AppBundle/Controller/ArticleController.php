@@ -4,18 +4,22 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleForm;
+use AppBundle\Form\ImageForm;
 use AppBundle\Repository\ArticleRepository;
-use Symfony\Component\Routing\Annotation\Route;
+use Imagine\Imagick\Image;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Vich\UploaderBundle\Entity\File;
+
 
 class ArticleController extends Controller
 {
 
     /**
-     * @Route("/api/art/", name="list_articles")
+     * @Route("/api/art/", name="api_list_articles")
      * @Method("GET")
      */
     public function listAction(Request $request)
@@ -23,13 +27,13 @@ class ArticleController extends Controller
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
         $serializer = $this->get('jms_serializer');
-        $paginator = $this-g>get('knp_paginator');
+        $paginator = $this->get('knp_paginator');
 
         $listOfArticles = $articleRepository->listAll();
 
         $results = $paginator->paginate(
             $listOfArticles,
-            $request->query->get('page'),
+            $request->query->get('page', 1),
             $request->query->get('limit') ?? 10);
 
         $results = $serializer->serialize($results, 'json');
@@ -37,11 +41,9 @@ class ArticleController extends Controller
         return new Response($serializer->serialize($results, 'json'), 200, ['content-type' => 'application/json']);
     }
 
-
     /**
-     * @Route ("/api/art/{id}", name="show_article")
+     * @Route("/api/art/{id}", name="api_show_article")
      * @Method("GET")
-     * @param $id
      */
     public function showAction($id)
     {
@@ -56,9 +58,8 @@ class ArticleController extends Controller
 
 
     /**
-     * @Route("/api/art/{id}", name="delete_article")
+     * @Route("/api/art/{id}", name="api_delete_article")
      * @Method("DELETE")
-     * @param $id
      */
     public function deleteAction($id = null)
     {
@@ -72,10 +73,8 @@ class ArticleController extends Controller
 
 
     /**
-     * @Route("/api/art/{id}" , name="update_article")
+     * @Route("/api/art/{id}" , name="api_update_article")
      * @Method("PUT")
-     * @param Request $request
-     * @param $id
      */
     public function updateAction(Request $request, $id)
     {
@@ -95,9 +94,8 @@ class ArticleController extends Controller
     }
 
     /**
-     * @Route("/api/art", name="create_article")
+     * @Route("/api/art", name="api_create_article")
      * @Method("POST")
-     * @param Request $request
      */
     public function createAction(Request $request)
     {
@@ -116,4 +114,34 @@ class ArticleController extends Controller
 
         return new Response(null, 201, ['content-type' => 'application/json']);
     }
+
+    /**
+     * @Route("/api/upload" , name="api_upload_image")
+     * @Method("POST")
+     */
+    public function uploadImage(Request $request)
+    {
+        $body = $request->getContent();
+        $body = base64_encode($body);
+
+        $form = $this->createForm(ImageForm::class);
+        $form->submit($body);
+        $data = $form->getViewData();
+        $data = base64_decode($data);
+        $im = imagecreatefromstring($data);
+
+        if ($im !== false) {
+            header('Content-Type: image/png');
+            imagepng($im);
+            imagedestroy($im);
+        }
+        else {
+            echo 'An error occurred.';
+        }
+
+//        dump($file);die;
+
+        return new Response();
+    }
+
 }

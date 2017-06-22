@@ -2,10 +2,8 @@
 
 namespace AppBundle\Controller;
 
-
 use AppBundle\Entity\Article;
 use AppBundle\Form\CommentForm;
-
 use AppBundle\Form\ArticleForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,14 +18,9 @@ class WebController extends Controller
 {
 
     /**
-     * Lists all Post entities.
-     *
-     * @param Request $request
-     *
      * @Route("/aa/", name="article_index",  options={"expose"=true})
      * @Method("GET")
      *
-     * @return Response
      */
     public function indexAction(Request $request)
     {
@@ -57,7 +50,6 @@ class WebController extends Controller
 
     /**
      * @Route("/a/", name="list_all_articles")
-     * @ Template("articles/list.html.twig")
      */
     public function listAllAction(Request $request)
     {
@@ -80,9 +72,9 @@ class WebController extends Controller
 
     /**
      * @Route ("/a/read/{id}", name="show_article", options={"expose"=true})
-     * @param $id
+     *
      */
-    public function showAction2($id, Request $request)
+    public function showAction($id, Request $request)
     {
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
@@ -116,7 +108,7 @@ class WebController extends Controller
 
     /**
      * @Route("/create", name="create_article")
-     * @param Request $request
+     *
      */
     public function createAction(Request $request)
     {
@@ -132,76 +124,78 @@ class WebController extends Controller
 
             if ($newArticle->getImageFile()) {
 
-            $file = $newArticle->getImageFile();
+                $file = $newArticle->getImageFile();
 
-            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+                $fileName = md5(uniqid()) . '.' . $file->guessExtension();
 
-            $file->move( $this->getParameter('images_directory'), $fileName  );
+                $file->move($this->getParameter('images_directory'), $fileName);
 
-            $newArticle->setImage($fileName);
+                $newArticle->setImage($fileName);
+            }
+            $articleRepository->update($newArticle);
+
+            return $this->redirectToRoute('article_index');
         }
-        $articleRepository->update($newArticle);
+
+        return $this->render('articles/create.html.twig', ['form' => $form->createView(),]);
+    }
+
+
+    /**
+     * @Route("/a/update/{id}" , name="update_article")
+     *
+     */
+    public
+    function updateAction(Request $request, $id)
+    {
+
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+
+        $articleToUpdate = $articleRepository->find($id);
+
+        $form = $this->createForm(ArticleForm::class, $articleToUpdate);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $articleToUpdate = $form->getData();
+            $articleRepository->update($articleToUpdate);
+
+            return $this->redirectToRoute('article_index');
+        }
+
+        return $this->render('articles/update.html.twig', [
+            'form' => $form->createView()]);
+    }
+
+    /**
+     * @Route("/a/{id}", name="delete_article")
+     *
+     */
+    public
+    function deleteAction($id = null)
+    {
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+
+        $articleRepository->delete($id);
 
         return $this->redirectToRoute('article_index');
     }
-
-return $this->render('articles/create.html.twig', ['form' => $form->createView(),]);
-}
-
-
-/**
- * @Route("/a/update/{id}" , name="update_article")
- * @param Request $request
- * @param $id
- */
-public
-function updateAction(Request $request, $id)
-{
-
-    /** @var $articleRepository $articleRepository */
-    $articleRepository = $this->get('app.repo.articles');
-
-    $articleToUpdate = $articleRepository->find($id);
-
-    $form = $this->createForm(ArticleForm::class, $articleToUpdate);
-    $form->handleRequest($request);
-
-    if ($form->isSubmitted() && $form->isValid()) {
-
-        $articleToUpdate = $form->getData();
-        $articleRepository->update($articleToUpdate);
-
-        return $this->redirectToRoute('article_index');
-    }
-
-    return $this->render('articles/update.html.twig', [
-        'form' => $form->createView()]);
-}
-
-/**
- * @Route("/a/{id}", name="delete_article")
- * @param $id
- */
-public
-function deleteAction($id = null)
-{
-    /** @var $articleRepository $articleRepository */
-    $articleRepository = $this->get('app.repo.articles');
-
-    $articleRepository->delete($id);
-
-    return $this->redirectToRoute('article_index');
-}
 
 
 //    /**
-//     * @Route("/aa", name="store_file")
+//     * @Route("/aaa", name="store_file")
 //     * @Method("POST")
 //     */
 //    public function storeImage()
 //    {
+//        dump($_FILES);
 //        $targetPath = substr(__DIR__, 0, -10) . "Images/";
+//        dump($targetPath);
 //        $targetPath = $targetPath . $_FILES['uploadedFile']['name'];
+//        dump($targetPath);
 ////        dump($_FILES['uploadedFile']['type']);die;
 //
 //        if (substr($_FILES['uploadedFile']['name'], -3) == 'jpg') {
@@ -220,6 +214,43 @@ function deleteAction($id = null)
 //
 //
 //        return $this->redirectToRoute('article_index');
+//    }
+//
+//    /**
+//     * @Route("/b", name="create_article")
+//     *
+//     */
+//    public function createAction2(Request $request)
+//    {
+//        /** @var $articleRepository $articleRepository */
+//        $articleRepository = $this->get('app.repo.articles');
+//
+//        $form = $this->createForm(ArticleForm::class);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//
+//            $newArticle = $form->getData();
+//
+//            $file = $newArticle->getImageFile();
+//            dump($file);
+//            $imageCoded = base64_encode($file);
+//            dump($imageCoded);
+////            dump(imagecreatefromstring($imageCoded));
+//            die;
+//
+//            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+//
+//            $file->move($this->getParameter('images_directory'), $fileName);
+//
+//            $newArticle->setImage($fileName);
+//
+//            $articleRepository->update($newArticle);
+//
+//            return $this->redirectToRoute('article_index');
+//        }
+//
+//        return $this->render('articles/create.html.twig', ['form' => $form->createView(),]);
 //    }
 
 

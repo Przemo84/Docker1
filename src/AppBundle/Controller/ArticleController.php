@@ -6,13 +6,11 @@ use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleForm;
 use AppBundle\Form\ImageForm;
 use AppBundle\Repository\ArticleRepository;
-use Imagine\Imagick\Image;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Vich\UploaderBundle\Entity\File;
 
 
 class ArticleController extends Controller
@@ -126,20 +124,21 @@ class ArticleController extends Controller
 
         $form = $this->createForm(ImageForm::class);
         $form->submit($body);
+
         $data = $form->getViewData();
         $data = base64_decode($data);
-        $im = imagecreatefromstring($data);
 
-        if ($im !== false) {
+        $image = imagecreatefromstring($data);
+
+        if ($image != false) {
             header('Content-Type: image/png');
-            imagepng($im);
-            imagedestroy($im);
+            $filePath = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/zdjecie.png';
+            imagepng($image, $filePath);
+            imagedestroy($image);
         }
         else {
             echo 'An error occurred.';
         }
-
-//        dump($file);die;
 
         return new Response();
     }

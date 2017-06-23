@@ -122,6 +122,8 @@ class WebController extends Controller
 
             $newArticle = $form->getData();
 
+            dump($newArticle);die;
+
             if ($newArticle->getImageFile()) {
 
                 $file = $newArticle->getImageFile();

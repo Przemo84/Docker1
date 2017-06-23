@@ -97,7 +97,6 @@ class ArticleController extends Controller
      */
     public function createAction(Request $request)
     {
-
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
@@ -113,9 +112,13 @@ class ArticleController extends Controller
         return new Response(null, 201, ['content-type' => 'application/json']);
     }
 
+
+// Body Request jako plik binarny. Bez zapisywania w bazie
+
     /**
      * @Route("/api/upload" , name="api_upload_image")
      * @Method("POST")
+     *
      */
     public function uploadImage(Request $request)
     {
@@ -129,18 +132,56 @@ class ArticleController extends Controller
         $data = base64_decode($data);
 
         $image = imagecreatefromstring($data);
+        $imageName = time();
 
         if ($image != false) {
             header('Content-Type: image/png');
-            $filePath = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/zdjecie.png';
+            $filePath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/images/' . $imageName . '.png';
             imagepng($image, $filePath);
             imagedestroy($image);
-        }
-        else {
+        } else {
             echo 'An error occurred.';
         }
-
         return new Response();
+    }
+
+//     Body JSON:title, content, imageBase64_string
+
+    /**
+     * @Route("/api/upload2" , name="api_upload_image2")
+     * @Method("POST")
+     *
+     */
+    public function uploadImage2(Request $request)
+    {
+        /** @var $articleRepository $articleRepository */
+        $articleRepository = $this->get('app.repo.articles');
+
+        $body = json_decode($request->getContent(), true);
+        dump($body);
+
+        $newArticle = new Article();
+
+        $form = $this->createForm(ArticleForm::class, $newArticle);
+        $form->submit($body);
+
+        dump($newArticle );die;
+
+
+
+
+//        $image = imagecreatefromstring($data);
+//
+//        if ($image != false) {
+//            header('Content-Type: image/png');
+//            $filePath = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/zdjecie.png'; /
+//            imagepng($image, $filePath);
+//            imagedestroy($image);
+//        }
+//        else {
+//            echo 'An error occurred.';
+//        }
+        return new Response(null, 201, ['content-type' => 'application/json']);
     }
 
 }

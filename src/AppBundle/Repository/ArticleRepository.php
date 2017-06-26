@@ -49,6 +49,7 @@ class ArticleRepository extends \Doctrine\ORM\EntityRepository
      */
     public function delete($id = null)
     {
+
         if ($id == null) {
 
             $this->createQueryBuilder('a')

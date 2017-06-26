@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleForm;
 use AppBundle\Repository\ArticleRepository;
+use ErrorException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -25,6 +26,7 @@ class ArticleController extends Controller
         $articleRepository = $this->get('app.repo.articles');
         $serializer = $this->get('jms_serializer');
         $paginator = $this->get('knp_paginator');
+
 
         $listOfArticles = $articleRepository->listAll();
 
@@ -109,11 +111,17 @@ class ArticleController extends Controller
         $form = $this->createForm(ArticleForm::class, $newArticle);
         $form->submit($body);
 
-        $imageName = $imageFactory->upload($body['imageContent']);
+        try {
+            $imageName = $imageFactory->upload($body['imageContent']);
 
-        $newArticle->setImage($imageName);
-        $articleRepository->update($newArticle);
+            $newArticle->setImage($imageName);
+            $articleRepository->update($newArticle);
 
+        } catch (\InvalidArgumentException $e) {
+
+            return new Response('Request cannot be processed due to semantical error',
+                422, ['content-type' => 'application/json']);
+        };
 
         return new Response(null, 201, ['content-type' => 'application/json']);
     }

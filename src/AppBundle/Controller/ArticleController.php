@@ -91,9 +91,12 @@ class ArticleController extends Controller
         return new Response(null, 200);
     }
 
+//     Body JSON:title, content, imageBase64_string
+
     /**
-     * @Route("/api/art", name="api_create_article")
+     * @Route("/api/create" , name="api_create_article")
      * @Method("POST")
+     *
      */
     public function createAction(Request $request)
     {
@@ -107,80 +110,23 @@ class ArticleController extends Controller
         $form = $this->createForm(ArticleForm::class, $newArticle);
         $form->submit($body);
 
+        $imageName = time().'.png';
+        $newArticle->setImage($imageName);
         $articleRepository->update($newArticle);
 
-        return new Response(null, 201, ['content-type' => 'application/json']);
-    }
+        $data= base64_decode($body['imageContent']);
 
-
-// Body Request jako plik binarny. Bez zapisywania w bazie
-
-    /**
-     * @Route("/api/upload" , name="api_upload_image")
-     * @Method("POST")
-     *
-     */
-    public function uploadImage(Request $request)
-    {
-        $body = $request->getContent();
-        $body = base64_encode($body);
-
-        $form = $this->createForm(ImageForm::class);
-        $form->submit($body);
-
-        $data = $form->getViewData();
-        $data = base64_decode($data);
-
-        $image = imagecreatefromstring($data);
-        $imageName = time();
+        $image= imagecreatefromstring($data);
 
         if ($image != false) {
             header('Content-Type: image/png');
-            $filePath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/images/' . $imageName . '.png';
-            imagepng($image, $filePath);
+            $filePath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/images/'.$imageName;
+            imagepng($image,$filePath);
             imagedestroy($image);
         } else {
             echo 'An error occurred.';
         }
-        return new Response();
-    }
 
-//     Body JSON:title, content, imageBase64_string
-
-    /**
-     * @Route("/api/upload2" , name="api_upload_image2")
-     * @Method("POST")
-     *
-     */
-    public function uploadImage2(Request $request)
-    {
-        /** @var $articleRepository $articleRepository */
-        $articleRepository = $this->get('app.repo.articles');
-
-        $body = json_decode($request->getContent(), true);
-        dump($body);
-
-        $newArticle = new Article();
-
-        $form = $this->createForm(ArticleForm::class, $newArticle);
-        $form->submit($body);
-
-        dump($newArticle );die;
-
-
-
-
-//        $image = imagecreatefromstring($data);
-//
-//        if ($image != false) {
-//            header('Content-Type: image/png');
-//            $filePath = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/zdjecie.png'; /
-//            imagepng($image, $filePath);
-//            imagedestroy($image);
-//        }
-//        else {
-//            echo 'An error occurred.';
-//        }
         return new Response(null, 201, ['content-type' => 'application/json']);
     }
 

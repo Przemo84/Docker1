@@ -122,7 +122,7 @@ class WebController extends Controller
 
             $newArticle = $form->getData();
 
-            dump($newArticle);die;
+//            dump($newArticle);die;
 
             if ($newArticle->getImageFile()) {
 

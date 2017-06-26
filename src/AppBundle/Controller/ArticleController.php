@@ -4,7 +4,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleForm;
-use AppBundle\Form\ImageForm;
 use AppBundle\Repository\ArticleRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -100,8 +99,8 @@ class ArticleController extends Controller
      */
     public function createAction(Request $request)
     {
-        /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
+        $imageFactory = $this->get('app.factory.images');
 
         $body = json_decode($request->getContent(), true);
 
@@ -110,22 +109,11 @@ class ArticleController extends Controller
         $form = $this->createForm(ArticleForm::class, $newArticle);
         $form->submit($body);
 
-        $imageName = time().'.png';
+        $imageName = $imageFactory->upload($body['imageContent']);
+
         $newArticle->setImage($imageName);
         $articleRepository->update($newArticle);
 
-        $data= base64_decode($body['imageContent']);
-
-        $image= imagecreatefromstring($data);
-
-        if ($image != false) {
-            header('Content-Type: image/png');
-            $filePath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/images/'.$imageName;
-            imagepng($image,$filePath);
-            imagedestroy($image);
-        } else {
-            echo 'An error occurred.';
-        }
 
         return new Response(null, 201, ['content-type' => 'application/json']);
     }

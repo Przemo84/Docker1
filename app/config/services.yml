@@ -19,7 +19,6 @@ services:
         arguments:
             - AppBundle\Entity\Commentary
 
-
     app.notifier.mail:
       class: AppBundle\Service\Notifier
       arguments:

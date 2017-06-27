@@ -4,7 +4,6 @@ namespace AppBundle\Repository;
 
 use AppBundle\Entity\Article;
 use Doctrine\ORM\Query\AST\LikeExpression;
-use function MongoDB\BSON\fromJSON;
 
 
 /**

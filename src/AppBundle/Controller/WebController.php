@@ -122,6 +122,7 @@ class WebController extends Controller
 
             $newArticle = $form->getData();
 
+
             if ($newArticle->getImageFile()) {
 
                 $file = $newArticle->getImageFile();
@@ -184,74 +185,17 @@ class WebController extends Controller
         return $this->redirectToRoute('article_index');
     }
 
+// Wysyłanie pliku. Wywołanie URL spowoduje że przeglądarka wyśle wskazany plik do pobrania użytkownikowi.
 
-//    /**
-//     * @Route("/aaa", name="store_file")
-//     * @Method("POST")
-//     */
-//    public function storeImage()
-//    {
-//        dump($_FILES);
-//        $targetPath = substr(__DIR__, 0, -10) . "Images/";
-//        dump($targetPath);
-//        $targetPath = $targetPath . $_FILES['uploadedFile']['name'];
-//        dump($targetPath);
-////        dump($_FILES['uploadedFile']['type']);die;
-//
-//        if (substr($_FILES['uploadedFile']['name'], -3) == 'jpg') {
-//
-//            if ($_FILES['uploadedFile']['size'] < 200000) {
-//
-//                if (move_uploaded_file($_FILES['uploadedFile']['tmp_name'], $targetPath)) {
-//                    echo "File: " . $_FILES['uploadedFile']['name'] . " has been uploaded to Images/";
-//                } else {
-//                    echo "Error when uploading a file. Try again.";
-//                }
-//            }
-//            echo 'Image size is to large. Maximum size of an image is 200kB.';
-//        }
-//        echo "Type of image file must be jpg, png, gif or bmp";
-//
-//
-//        return $this->redirectToRoute('article_index');
-//    }
-//
-//    /**
-//     * @Route("/b", name="create_article")
-//     *
-//     */
-//    public function createAction2(Request $request)
-//    {
-//        /** @var $articleRepository $articleRepository */
-//        $articleRepository = $this->get('app.repo.articles');
-//
-//        $form = $this->createForm(ArticleForm::class);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//
-//            $newArticle = $form->getData();
-//
-//            $file = $newArticle->getImageFile();
-//            dump($file);
-//            $imageCoded = base64_encode($file);
-//            dump($imageCoded);
-////            dump(imagecreatefromstring($imageCoded));
-//            die;
-//
-//            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
-//
-//            $file->move($this->getParameter('images_directory'), $fileName);
-//
-//            $newArticle->setImage($fileName);
-//
-//            $articleRepository->update($newArticle);
-//
-//            return $this->redirectToRoute('article_index');
-//        }
-//
-//        return $this->render('articles/create.html.twig', ['form' => $form->createView(),]);
-//    }
-
+    /**
+     * @Route("/aaa", name="send_file")
+     *
+     */
+    public function fileAction()
+    {
+        $zm = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/ccac0ea4d31a06f37d83056b1260d938.jpeg';
+        // send the file contents and force the browser to download it
+        return $this->file($zm);
+    }
 
 }

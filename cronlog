@@ -330,3 +330,31 @@ Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArg
 Stack trace:
 #0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(401): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/var/www/symfon...')
 #1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loa in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\Commentary::$id does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'id')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'id')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Object(Doctrine\ORM\ in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\Commentary::$id does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'id')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'id')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Object(Doctrine\ORM\ in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\Commentary::$id does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'id')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'id')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Object(Doctrine\ORM\ in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\Commentary::$id does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'id')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'id')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Object(Doctrine\ORM\ in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80

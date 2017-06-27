@@ -19,7 +19,6 @@ class ImageFactory
         $image = @imagecreatefromstring($data); // @wyciszenie Warning'a w razie błędnego $data, aby
         //elegancko rzucić wyjątkiem "Unsupported image type or corrupted image"
 
-
         if ($image != false) {
             header('Content-Type: image/png');
             $filePath = $_SERVER['DOCUMENT_ROOT'] . '/uploads/images/' . $imageName;

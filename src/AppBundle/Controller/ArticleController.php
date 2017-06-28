@@ -119,7 +119,7 @@ class ArticleController extends Controller
 
         } catch (\InvalidArgumentException $e) {
 
-            return new Response('Request cannot be processed due to semantical error',
+            return new Response($e->getMessage(),
                 422, ['content-type' => 'application/json']);
         };
 

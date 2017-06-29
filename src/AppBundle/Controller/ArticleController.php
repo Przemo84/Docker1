@@ -29,7 +29,6 @@ class ArticleController extends Controller
             $request->query->get('page', 1),
             $request->query->get('limit') ?? 10);
 
-        $results = $serializer->serialize($results, 'json');
 
         return new Response($serializer->serialize($results, 'json'), 200, ['content-type' => 'application/json']);
     }

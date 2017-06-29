@@ -1,6 +1,80 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation
+
+api_list_articles:
+    path: /api/art
+    methods: GET
+    defaults: { _controller: AppBundle:Article:list }
+
+api_show_article:
+    path: /api/art/{id}
+    methods: GET
+    defaults: { _controller: AppBundle:Article:show }
+    requirements:
+        id: '\d+'
+
+api_delete_article:
+    path: /api/art/{id}
+    methods: DELETE
+    defaults: { _controller: AppBundle:Article:delete }
+    requirements:
+         id: '\d+'
+
+api_update_article:
+    path: /api/art/{id}
+    methods: PUT
+    defaults: { _controller: AppBundle:Article:update }
+    requirements:
+         id: '\d+'
+
+api_create_article:
+    path: /api/art
+    methods: POST
+    defaults: { _controller: AppBundle:Article:create }
+
+article_index:
+    path: /articles
+    methods: GET
+    defaults:  { _controller: AppBundle:Web:index }
+
+list_all_articles:
+    path: /a
+    methods: GET
+    defaults: { _controller: AppBundle:Web:listAll }
+
+show_article:
+    path: /article/read/{id}
+    methods: ['GET' , 'POST']
+    defaults: { _controller:  AppBundle:Web:show }
+    requirements:
+        id: '\d+'
+
+create_article:
+    path: /create
+    methods: ['GET' , 'POST']
+    defaults: { _controller: AppBundle:Web:create }
+
+
+update_article:
+    path: /article/update/{id}
+    methods: ['GET' , 'POST']
+    defaults: { _controller: AppBundle:Web:update }
+    requirements:
+        id: '\d+'
+
+delete_article:
+    path: /article/{id}
+    methods: GET
+    defaults: { _controller: AppBundle:Web:delete }
+    requirements:
+        id: '\d+'
+
+send_file:
+    path: /sendfile
+    methods: GET
+    defaults: { _controller: AppBundle:Web:file }
+
 
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

@@ -18,6 +18,7 @@ class ImageFactory
 
         $image = @imagecreatefromstring($data); // @wyciszenie Warning'a w razie błędnego $data, aby
         //elegancko rzucić wyjątkiem "Unsupported image type or corrupted image"
+        //ten wyjątek jest złapany w try-catch w ArticleController
 
         if ($image != false) {
             header('Content-Type: image/png');

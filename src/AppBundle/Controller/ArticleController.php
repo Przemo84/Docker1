@@ -10,23 +10,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
 class ArticleController extends Controller
 {
 
-    /**
-     * @Route("/api/art/", name="api_list_articles")
-     * @Method("GET")
-     */
     public function listAction(Request $request)
     {
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
         $serializer = $this->get('jms_serializer');
         $paginator = $this->get('knp_paginator');
-
 
         $listOfArticles = $articleRepository->listAll();
 
@@ -40,10 +34,7 @@ class ArticleController extends Controller
         return new Response($serializer->serialize($results, 'json'), 200, ['content-type' => 'application/json']);
     }
 
-    /**
-     * @Route("/api/art/{id}", name="api_show_article")
-     * @Method("GET")
-     */
+
     public function showAction($id)
     {
         /** @var $articleRepository $articleRepository */
@@ -56,10 +47,6 @@ class ArticleController extends Controller
     }
 
 
-    /**
-     * @Route("/api/art/{id}", name="api_delete_article")
-     * @Method("DELETE")
-     */
     public function deleteAction($id = null)
     {
         /** @var $articleRepository $articleRepository */
@@ -71,10 +58,6 @@ class ArticleController extends Controller
     }
 
 
-    /**
-     * @Route("/api/art/{id}" , name="api_update_article")
-     * @Method("PUT")
-     */
     public function updateAction(Request $request, $id)
     {
         /** @var $articleRepository $articleRepository */
@@ -93,12 +76,6 @@ class ArticleController extends Controller
     }
 
 //     Body JSON:title, content, imageBase64_string
-
-    /**
-     * @Route("/api/create" , name="api_create_article")
-     * @Method("POST")
-     *
-     */
     public function createAction(Request $request)
     {
         $articleRepository = $this->get('app.repo.articles');

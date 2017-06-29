@@ -17,11 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class WebController extends Controller
 {
 
-    /**
-     * @Route("/aa/", name="article_index",  options={"expose"=true})
-     * @Method("GET")
-     *
-     */
+// Wyświetla ładnie artykuły w DataTables
     public function indexAction(Request $request)
     {
         $isAjax = $request->isXmlHttpRequest();
@@ -47,10 +43,7 @@ class WebController extends Controller
         ]);
     }
 
-
-    /**
-     * @Route("/a/", name="list_all_articles")
-     */
+// Wyświetla artykułu po staremu
     public function listAllAction(Request $request)
     {
         /** @var $articleRepository $articleRepository */
@@ -70,10 +63,6 @@ class WebController extends Controller
     }
 
 
-    /**
-     * @Route ("/a/read/{id}", name="show_article", options={"expose"=true})
-     *
-     */
     public function showAction($id, Request $request)
     {
         /** @var $articleRepository $articleRepository */
@@ -84,7 +73,6 @@ class WebController extends Controller
 
         $article = $articleRepository->showOne($id);
         $comments = $commentaryRepository->listComments($id);
-
 
         $commentForm = $this->createForm(CommentForm::class);
         $commentForm->handleRequest($request);
@@ -106,10 +94,7 @@ class WebController extends Controller
             'commentForm' => $commentForm->createView()]);
     }
 
-    /**
-     * @Route("/create", name="create_article")
-     *
-     */
+
     public function createAction(Request $request)
     {
         /** @var $articleRepository $articleRepository */
@@ -142,12 +127,7 @@ class WebController extends Controller
     }
 
 
-    /**
-     * @Route("/a/update/{id}" , name="update_article")
-     *
-     */
-    public
-    function updateAction(Request $request, $id)
+    public function updateAction(Request $request, $id)
     {
 
         /** @var $articleRepository $articleRepository */
@@ -170,12 +150,8 @@ class WebController extends Controller
             'form' => $form->createView()]);
     }
 
-    /**
-     * @Route("/a/{id}", name="delete_article")
-     *
-     */
-    public
-    function deleteAction($id = null)
+
+    public function deleteAction($id = null)
     {
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
@@ -186,11 +162,6 @@ class WebController extends Controller
     }
 
 // Wysyłanie pliku. Wywołanie URL spowoduje że przeglądarka wyśle wskazany plik do pobrania użytkownikowi.
-
-    /**
-     * @Route("/aaa", name="send_file")
-     *
-     */
     public function fileAction()
     {
         $zm = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/ccac0ea4d31a06f37d83056b1260d938.jpeg';

@@ -29,11 +29,11 @@ class MyUser implements UserInterface
      */
     private $isActive;
 
-    function __construct($username = 'przemo', $password = 'qwerty')
-    {
-        $this->username = $username;
-        $this->password = $password;
-    }
+//    function __construct($username = 'przemo', $password = 'qwerty')
+//    {
+//        $this->username = $username;
+//        $this->password = $password;
+//    }
 
     /**
      * Get id

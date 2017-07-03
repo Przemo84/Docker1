@@ -17,10 +17,12 @@ class ArticleController extends Controller
 
     public function listAction(Request $request)
     {
+
         /** @var ArticleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
         $serializer = $this->get('jms_serializer');
         $paginator = $this->get('knp_paginator');
+
 
         $listOfArticles = $articleRepository->listAll();
 

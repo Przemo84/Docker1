@@ -29,6 +29,12 @@ api_create_article:
     methods: POST
     defaults: { _controller: AppBundle:Article:create }
 
+
+article_admin:
+    path: /user
+    methods: GET
+    defaults: { _controller: AppBundle:Web:admin }
+
 article_index:
     path: /articles
     methods: GET
@@ -40,7 +46,7 @@ list_all_articles:
     defaults: { _controller: AppBundle:Web:listAll }
 
 show_article:
-    path: /article/read/{id}
+    path: /articles/read/{id}
     methods: ['GET' , 'POST']
     defaults: { _controller:  AppBundle:Web:show }
     requirements:
@@ -53,14 +59,14 @@ create_article:
 
 
 update_article:
-    path: /article/update/{id}
+    path: /articles/update/{id}
     methods: ['GET' , 'POST']
     defaults: { _controller: AppBundle:Web:update }
     requirements:
         id: '\d+'
 
 delete_article:
-    path: /article/{id}
+    path: /articles/{id}
     methods: GET
     defaults: { _controller: AppBundle:Web:delete }
     requirements:
@@ -70,3 +76,8 @@ send_file:
     path: /sendfile
     methods: GET
     defaults: { _controller: AppBundle:Web:file }
+
+info_after_auth:
+    path: /info
+    methods: GET
+    defaults: { _controller: AppBundle:Web:info }

@@ -106,6 +106,20 @@ liip_imagine:
 hautelook_alice:
     fixtures_path: 'Resources/fixtures/orm'
 
+##FOS_USER
+#fos_user:
+#    db_driver: orm
+#    firewall_name: main
+#    user_class: AppBundle\Entity\People
+#    from_email: mailer_user
+
+#JTW AUTHENTICATION
+lexik_jwt_authentication:
+    private_key_path: '%jwt_private_key_path%'
+    public_key_path:  '%jwt_public_key_path%'
+    pass_phrase:      '%jwt_key_pass_phrase%'
+    token_ttl:        '%jwt_token_ttl%'
+
 
 
 

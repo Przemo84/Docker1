@@ -358,3 +358,591 @@ Stack trace:
 #1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'id')
 #2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
 #3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Object(Doctrine\ORM\ in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: You have requested a non-existent parameter "jwt_private_key_path". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('jwt_private_key...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(217): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('jwt_private_key...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(187): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%jwt_private_ke...', Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Comp in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: You have requested a non-existent parameter "jwt_private_key_path". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('jwt_private_key...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(217): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('jwt_private_key...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(187): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%jwt_private_ke...', Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Comp in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: You have requested a non-existent parameter "jwt_private_key_path". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('jwt_private_key...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(217): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('jwt_private_key...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(187): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%jwt_private_ke...', Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Comp in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException: You have requested a non-existent parameter "jwt_private_key_path". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php:100
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/EnvPlaceholderParameterBag.php(56): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->get('jwt_private_key...')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(217): Symfony\Component\DependencyInjection\ParameterBag\EnvPlaceholderParameterBag->get('jwt_private_key...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php(187): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%jwt_private_ke...', Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Comp in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/ParameterBag/ParameterBag.php on line 100
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "from_email" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyIn in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "from_email" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyIn in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "from_email" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyIn in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "from_email" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyIn in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "sender_name" at path "fos_user.from_email" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(254): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Defi in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "sender_name" at path "fos_user.from_email" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(254): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Defi in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "sender_name" at path "fos_user.from_email" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(254): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Defi in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "sender_name" at path "fos_user.from_email" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(254): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Defi in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "db_driver" at path "fos_user" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/friendsofsymfony/user-bundle/DependencyInjection/FOSUserExtension.php(51): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(FOS\UserBundle\DependencyInj in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a mapping item when in a sequence at line 4 (near "dev:") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:189
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse('- { path: ^/api...', 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(29, '- { path: ^/api...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(6, 'providers:\n    ...', 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse('security:\n\n    ...', 256)
+#5 /var/www/symfony/vendor in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\People::$usernames does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'usernames')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'usernames')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Obj in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\People::$usernames does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'usernames')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'usernames')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Obj in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\People::$usernames does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'usernames')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'usernames')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Obj in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught ReflectionException: Property AppBundle\Entity\People::$usernames does not exist in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php:80
+Stack trace:
+#0 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php(80): ReflectionProperty->__construct('AppBundle\\Entit...', 'usernames')
+#1 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php(964): Doctrine\Common\Persistence\Mapping\RuntimeReflectionService->getAccessibleProperty('AppBundle\\Entit...', 'usernames')
+#2 /var/www/symfony/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php(721): Doctrine\ORM\Mapping\ClassMetadataInfo->wakeupReflection(Object(Doctrine\Common\Persistence\Mapping\RuntimeReflectionService))
+#3 /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php(343): Doctrine\ORM\Mapping\ClassMetadataFactory->wakeupReflection(Obj in /var/www/symfony/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php on line 80
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a sequence item when in a mapping at line 46 (near "- { path: ^/api, roles: IS_AUTHENTICATED_FULLY }") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:154
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(396): Symfony\Component\Yaml\Parser->parse('security:\n    e...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loadFile('/var/www/symfon...')
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php(103): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->load('/var/www/symfon...', NULL)
+#4 /var/www/symfony/vendo in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a sequence item when in a mapping at line 46 (near "- { path: ^/api, roles: IS_AUTHENTICATED_FULLY }") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:154
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(396): Symfony\Component\Yaml\Parser->parse('security:\n    e...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loadFile('/var/www/symfon...')
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php(103): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->load('/var/www/symfon...', NULL)
+#4 /var/www/symfony/vendo in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a sequence item when in a mapping at line 46 (near "- { path: ^/api, roles: IS_AUTHENTICATED_FULLY }") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:154
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(396): Symfony\Component\Yaml\Parser->parse('security:\n    e...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loadFile('/var/www/symfon...')
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php(103): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->load('/var/www/symfon...', NULL)
+#4 /var/www/symfony/vendo in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: You cannot define a sequence item when in a mapping at line 46 (near "- { path: ^/api, roles: IS_AUTHENTICATED_FULLY }") in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:154
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(103): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(396): Symfony\Component\Yaml\Parser->parse('security:\n    e...', 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(69): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loadFile('/var/www/symfon...')
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php(103): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->load('/var/www/symfon...', NULL)
+#4 /var/www/symfony/vendo in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "class" under "security.providers.jwt" in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:317
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\PrototypedArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 317
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "providers" at path "security" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Extension/Extension.php(99): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(Symfony\Bundle\S in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "providers" at path "security" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Extension/Extension.php(99): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(Symfony\Bundle\S in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "providers" at path "security" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Extension/Extension.php(99): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(Symfony\Bundle\S in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: The child node "providers" at path "security" must be configured. in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:240
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(303): Symfony\Component\Config\Definition\ArrayNode->finalizeValue(Array)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(37): Symfony\Component\Config\Definition\BaseNode->finalize(Array)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(50): Symfony\Component\Config\Definition\Processor->process(Object(Symfony\Component\Config\Definition\ArrayNode), Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Extension/Extension.php(99): Symfony\Component\Config\Definition\Processor->processConfiguration(Object(Symfony\Bundle\S in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 240
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidTypeException: Invalid type for path "security.providers.my_provider.entity". Expected array, but got string in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:273
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(261): Symfony\Component\Config\Definition\ArrayNode->validateType('AppBundle:User')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize('AppBundle:User')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/ in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 273
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidTypeException: Invalid type for path "security.providers.my_provider.entity". Expected array, but got string in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:273
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(261): Symfony\Component\Config\Definition\ArrayNode->validateType('AppBundle:User')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize('AppBundle:User')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/ in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 273
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidTypeException: Invalid type for path "security.providers.my_provider.entity". Expected array, but got string in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:273
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(261): Symfony\Component\Config\Definition\ArrayNode->validateType('AppBundle:User')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize('AppBundle:User')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/ in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 273
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidTypeException: Invalid type for path "security.providers.my_provider.entity". Expected array, but got string in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:273
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(261): Symfony\Component\Config\Definition\ArrayNode->validateType('AppBundle:User')
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(307): Symfony\Component\Config\Definition\BaseNode->normalize('AppBundle:User')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(264): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/PrototypedArrayNode.php(283): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /var/www/symfony/vendor/symfony/ in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 273
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: No authentication listener registered for firewall "secured_area". in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php:481
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(385): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createAuthenticationListeners(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, 'security.user.p...', NULL)
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php(242): Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension->createFirewall(Object(Symfony\Component\DependencyInjection\ContainerBuilder), 'secured_area', Array, Array, Array, 'security.firewa...')
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bu in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/DependencyInjection/SecurityExtension.php on line 481
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Indentation problem at line 55 (near "   secured_area:"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:492
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->getNextEmbedBlock()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(24, 'dev:\n    patter...', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(4, 'encoders:\n    A...', 256)
+#5 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parse in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Indentation problem at line 55 (near "   secured_area:"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:492
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->getNextEmbedBlock()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(24, 'dev:\n    patter...', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(4, 'encoders:\n    A...', 256)
+#5 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parse in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Indentation problem at line 55 (near "   secured_area:"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:492
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->getNextEmbedBlock()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(24, 'dev:\n    patter...', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(4, 'encoders:\n    A...', 256)
+#5 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parse in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118
+
+Fatal error: Uncaught Symfony\Component\Yaml\Exception\ParseException: Indentation problem at line 55 (near "   secured_area:"). in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php:492
+Stack trace:
+#0 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->getNextEmbedBlock()
+#1 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#2 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(24, 'dev:\n    patter...', 256)
+#3 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(351): Symfony\Component\Yaml\Parser->doParse(Array, 256)
+#4 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parser.php(276): Symfony\Component\Yaml\Parser->parseBlock(4, 'encoders:\n    A...', 256)
+#5 /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Yaml/Parse in /var/www/symfony/vendor/symfony/symfony/src/Symfony/Component/Config/Loader/FileLoader.php on line 118

@@ -1,24 +1,85 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+#    providers:
+#        jwt:
+#            lexik_jwt: ~
+#            class: AppBundle\Entity\People
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    przemo:
+                        password: dummy
+                        roles: ROLE_USER
+#        my_provider:
+#            entity:
+#                class: AppBundle:MyUser
+#                property: username
+#        in_memory:
+#            memory: ~
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+        login:
+            pattern:  ^/api/login
+            stateless: true
+            anonymous: true
+            provider: in_memory
+            form_login:
+                check_path:               /api/login_check
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+                require_previous_session: false
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
+        api:
+            pattern:   ^/api
+            stateless: true
+            provider: in_memory
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
+
+#        secured_area:
+#            http_basic: ~
+#                # ...
+#            logout:
+#                path:   /logout
+#                target: /articles
+
+
+        # disables authentication for assets and the profiler, adapt it according to your needs
+#        dev:
+#            pattern: ^/(_(profiler|wdt)|css|images|js)/
+#            security: false
+
+#        main:
+#        symbol(^) mówi, że pattern występuje tylko na URL ZACZYNAJĄCE się w dokładnie ten sposób.
+#        Jeżeli np.chcemy zablokować dostęp wszędzie gdzie występuje /read w URL (czy to na początku, w środku, czy na końcu)
+#        wystarczy /read. Odmówi to dostępu zarówno do /read/12/cos  oraz 12/read/cos itp.
+#            pattern:    ^/
+#            anonymous: ~
+#            stateless:  true
+#            provider: my_provider
+#            # activate different ways to authenticate
 
             # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+#            http_basic: ~
+
+
+
+#    access_control:
+##         require ROLE_ADMIN for /admin*
+#        - { path: ^/info, roles: ROLE_USER }
 
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
             #form_login: ~
+
+
+    access_control:
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }

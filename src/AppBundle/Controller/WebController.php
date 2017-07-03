@@ -12,10 +12,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 class WebController extends Controller
 {
+
+    public function adminAction()
+    {
+        return new Response('<html><body>Admin page!</body></html>');
+    }
 
 // Wyświetla ładnie artykuły w DataTables
     public function indexAction(Request $request)
@@ -41,6 +47,8 @@ class WebController extends Controller
         return $this->render('articles/list2.html.twig', [
             'datatable' => $datatable,
         ]);
+
+
     }
 
 // Wyświetla artykułu po staremu
@@ -65,6 +73,10 @@ class WebController extends Controller
 
     public function showAction($id, Request $request)
     {
+//  Wpuszcza jedynie jeżeli credencials się zgadzają i osoba ma rolę ROLE_USER.
+//        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Dostep zabroniony');
+
+
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
 
@@ -129,6 +141,7 @@ class WebController extends Controller
 
     public function updateAction(Request $request, $id)
     {
+//        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Dostep zabroniony');
 
         /** @var $articleRepository $articleRepository */
         $articleRepository = $this->get('app.repo.articles');
@@ -167,6 +180,14 @@ class WebController extends Controller
         $zm = $_SERVER['DOCUMENT_ROOT'].'/uploads/images/ccac0ea4d31a06f37d83056b1260d938.jpeg';
         // send the file contents and force the browser to download it
         return $this->file($zm);
+    }
+
+
+    public function infoAction(UserInterface $user = null)
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Dostep zabroniony');
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        dump($user);die;
     }
 
 }

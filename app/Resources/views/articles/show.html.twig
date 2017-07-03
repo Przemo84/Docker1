@@ -24,7 +24,9 @@
 
         <div class="commentsContainer">
             <div class="commentForm">
+                {#{%   if is_granted('ROLE_USER') %}#}
                 {{ form(commentForm) }}
+                {#{% endif %}#}
                 <br/>
             </div>
         </div>

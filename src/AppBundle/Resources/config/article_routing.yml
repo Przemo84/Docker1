@@ -29,11 +29,11 @@ api_create_article:
     methods: POST
     defaults: { _controller: AppBundle:Article:create }
 
-
 article_admin:
     path: /user
     methods: GET
     defaults: { _controller: AppBundle:Web:admin }
+
 
 article_index:
     path: /articles
@@ -59,7 +59,7 @@ create_article:
 
 
 update_article:
-    path: /articles/update/{id}
+    path: /article/update/{id}
     methods: ['GET' , 'POST']
     defaults: { _controller: AppBundle:Web:update }
     requirements:

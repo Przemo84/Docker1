@@ -19,6 +19,12 @@ services:
         arguments:
             - AppBundle\Entity\Commentary
 
+    app.repo.users:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\MyUser
+
     app.notifier.mail:
       class: AppBundle\Service\Notifier
       arguments:
@@ -31,3 +37,16 @@ services:
 
     app.factory.images:
       class: AppBundle\Factory\Image\ImageFactory
+
+    article_api.event.jwt_created_listener:
+            class: AppBundle\EventListener\JWTCreatedListener
+            arguments: [ '@request_stack' ]
+            tags:
+                - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+
+
+    article_api.event.jwt_decoded_listener:
+        class: AppBundle\EventListener\JWTDecodedListener
+        arguments: [ '@request_stack' ]
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_decoded, method: onJWTDecoded }

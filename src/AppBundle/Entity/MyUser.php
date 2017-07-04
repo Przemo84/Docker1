@@ -3,31 +3,31 @@
 namespace AppBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use FOS\UserBundle\Model\User as BaseUser;
 
-/**
- * MyUser
- */
-class MyUser implements UserInterface
+
+
+class MyUser extends BaseUser implements UserInterface
 {
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      */
-    private $username;
+    protected $username;
 
     /**
      * @var string
      */
-    private $password;
+    protected $password;
 
     /**
      * @var bool
      */
-    private $isActive;
+    protected $isActive;
 
 //    function __construct($username = 'przemo', $password = 'qwerty')
 //    {

@@ -37,7 +37,7 @@ article_admin:
 
 article_index:
     path: /articles
-    methods: GET
+    methods: [GET, POST]
     defaults:  { _controller: AppBundle:Web:index }
 
 list_all_articles:
@@ -53,13 +53,13 @@ show_article:
         id: '\d+'
 
 create_article:
-    path: /create
+    path: articles/create
     methods: ['GET' , 'POST']
     defaults: { _controller: AppBundle:Web:create }
 
 
 update_article:
-    path: /article/update/{id}
+    path: /articles/update/{id}
     methods: ['GET' , 'POST']
     defaults: { _controller: AppBundle:Web:update }
     requirements:
@@ -77,7 +77,15 @@ send_file:
     methods: GET
     defaults: { _controller: AppBundle:Web:file }
 
+login:
+    path: /login
+    methods: [GET, POST]
+    defaults: { _controller: AppBundle:Security:login }
+
+
 info_after_auth:
     path: /info
     methods: GET
     defaults: { _controller: AppBundle:Web:info }
+
+

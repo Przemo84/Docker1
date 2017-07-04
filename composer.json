@@ -26,7 +26,7 @@
         "doctrine/orm": "^2.5",
         "friendsofsymfony/jsrouting-bundle": "@stable",
         "friendsofsymfony/rest-bundle": "^2.1",
-        "friendsofsymfony/user-bundle": "^2.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
         "fzaninotto/faker": "^1.6",
         "incenteev/composer-parameter-handler": "^2.0",
         "jms/serializer": "^1.6",

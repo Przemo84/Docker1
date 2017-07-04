@@ -1,31 +1,42 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+
     encoders:
-        AppBundle\Entity\MyUser: plaintext
+        FOS\UserBundle\Model\UserInterface: bcrypt
+#        AppBundle\Entity\MyUser:
+#            algorithm: bcrypt
+#            cost: 12
 
 
-    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+# http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
 
     providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
 #        in_memory:
 #            memory:
 #                users:
 #                    przemo:
-#                        password: dummy
+#                        password: qwerty
 #                        roles: ROLE_USER
-        my_provider:
+
+        my_przemo_provider:
             entity:
                 class: AppBundle:MyUser
                 property: username
-#
 
     firewalls:
         login:
             pattern:  ^/api/login
             stateless: true
             anonymous: true
-            provider: my_provider
+            provider: my_przemo_provider
             form_login:
                 check_path:               /api/login_check
                 success_handler:          lexik_jwt_authentication.handler.authentication_success
@@ -33,49 +44,68 @@ security:
                 require_previous_session: false
 
         api:
-            pattern:   ^/api
+            pattern: ^/api
             stateless: true
-            provider: my_provider
+            provider: my_przemo_provider
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
 
-#        secured_area:
+
+# disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern:    ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+            logout: true
+            anonymous: true
+
+
+##########  Moja wcześniejsza próba form_login BEZ FOS_UserBundle
+#            pattern:    ^/articles
+##            anonymous: ~
+#            provider: my_przemo_provider
+#            form_login:
+#                check_path: login
+#                login_path: login
+#                username_parameter: _username
+#                password_parameter: _password
+#                target_path_parameter: /articles
+#                default_target_path: /articles
+
+
+###########  Moja wcześniejsza konfiguracja http_basic: ~
+#            pattern:    ^/articles
 #            http_basic: ~
-#                # ...
-#            logout:
-#                path:   /logout
-#                target: /articles
-
-
-        # disables authentication for assets and the profiler, adapt it according to your needs
-#        dev:
-#            pattern: ^/(_(profiler|wdt)|css|images|js)/
-#            security: false
-
-#        main:
-#        symbol(^) mówi, że pattern występuje tylko na URL ZACZYNAJĄCE się w dokładnie ten sposób.
-#        Jeżeli np.chcemy zablokować dostęp wszędzie gdzie występuje /read w URL (czy to na początku, w środku, czy na końcu)
-#        wystarczy /read. Odmówi to dostępu zarówno do /read/12/cos  oraz 12/read/cos itp.
-#            pattern:    ^/
-#            anonymous: ~
-#            stateless:  true
-#            provider: my_provider
-#            # activate different ways to authenticate
-
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-#            http_basic: ~
+#            provider: my_przemo_provider
 
 
 
-#    access_control:
-##         require ROLE_ADMIN for /admin*
-#        - { path: ^/info, roles: ROLE_USER }
+# activate different ways to authenticate
 
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+# http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+
+# http://symfony.com/doc/current/cookbook/security/form_login_setup.html
             #form_login: ~
-
 
     access_control:
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/articles,  roles: IS_AUTHENTICATED_FULLY }
+#        - { path: ^/info, roles: ROLE_USER }
+#        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/profile$, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/admin/, roles: ROLE_ADMIN }
+
+#################################################
+#        symbol(^) mówi, że pattern występuje tylko na URL ZACZYNAJĄCE się w dokładnie ten sposób.
+#        Jeżeli np.chcemy zablokować dostęp wszędzie gdzie występuje /read w URL (czy to na początku, w środku, czy na końcu)
+#        wystarczy /read. Odmówi to dostępu zarówno do /read/12/cos  oraz 12/read/cos itp

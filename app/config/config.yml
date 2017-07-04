@@ -107,11 +107,13 @@ hautelook_alice:
     fixtures_path: 'Resources/fixtures/orm'
 
 ##FOS_USER
-#fos_user:
-#    db_driver: orm
-#    firewall_name: main
-#    user_class: AppBundle\Entity\People
-#    from_email: mailer_user
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\MyUser
+    from_email:
+        address: "lgkas@yourapp.com"
+        sender_name: "Demo String"
 
 #JTW AUTHENTICATION
 lexik_jwt_authentication:
@@ -119,6 +121,17 @@ lexik_jwt_authentication:
     public_key_path:  '%jwt_public_key_path%'
     pass_phrase:      '%jwt_key_pass_phrase%'
     token_ttl:        '%jwt_token_ttl%'
+    token_extractors:
+        authorization_header:      # look for a token as Authorization Header
+            enabled: true
+            prefix:  Bearer
+            name:    Authorization
+        cookie:                    # check token in a cookie
+            enabled: false
+            name:    BEARER
+        query_parameter:           # check token in query string parameter
+            enabled: false
+            name:    bearer
 
 
 

@@ -17,6 +17,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class WebController extends Controller
 {
+    public function logoutAction()
+    {
+        return new Response('<html><body>Zostałeś wylogowany!</body></html>');
+    }
+
 
     public function adminAction()
     {

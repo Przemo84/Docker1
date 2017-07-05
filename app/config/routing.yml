@@ -18,5 +18,3 @@ fos_user:
 api_login_check:
     path: /api/login_check
 
-logout:
-    path: /logout

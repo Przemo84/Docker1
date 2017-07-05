@@ -8,14 +8,4 @@ AppBundle\Entity\MyUser:
             id: true
             generator:
                 strategy: AUTO
-    fields:
-        username:
-            type: string
-            length: '100'
-            unique: true
-        password:
-            type: string
-            length: 255
-        isActive:
-            type: boolean
     lifecycleCallbacks: {  }

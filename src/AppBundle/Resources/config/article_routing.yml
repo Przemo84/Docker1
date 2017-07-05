@@ -77,11 +77,11 @@ send_file:
     methods: GET
     defaults: { _controller: AppBundle:Web:file }
 
-login:
-    path: /login
-    methods: [GET, POST]
-    defaults: { _controller: AppBundle:Security:login }
 
+logout:
+    path: /
+    methods: GET
+    defaults: { _controller: AppBundle:Web:logout }
 
 info_after_auth:
     path: /info
